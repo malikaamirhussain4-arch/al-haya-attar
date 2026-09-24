@@ -57,9 +57,7 @@
     .brand-text h1 { font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--gold); letter-spacing: 2px; }
     .brand-text p { font-size: 0.6rem; color: var(--text-gray); letter-spacing: 3px; text-transform: uppercase; }
 
-    .search-bar {
-      flex: 1; max-width: 500px; position: relative; display: flex;
-    }
+    .search-bar { flex: 1; max-width: 500px; position: relative; display: flex; }
     .search-bar input {
       width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(212, 175, 55, 0.3);
       padding: 10px 45px 10px 15px; border-radius: 4px; color: #fff; font-size: 0.85rem;
@@ -75,14 +73,8 @@
     .badge-count { background: var(--gold); color: #000; font-weight: bold; font-size: 0.7rem; padding: 2px 6px; border-radius: 10px; }
 
     /* Nav Links Bar */
-    .nav-links-bar {
-      background: rgba(12, 10, 18, 0.95);
-      border-top: 1px solid rgba(255,255,255,0.05);
-      padding: 10px 30px;
-    }
-    .nav-links-container {
-      max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;
-    }
+    .nav-links-bar { background: rgba(12, 10, 18, 0.95); border-top: 1px solid rgba(255,255,255,0.05); padding: 10px 30px; }
+    .nav-links-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
     .all-categories-btn {
       background: rgba(212, 175, 55, 0.15); border: 1px solid var(--gold); color: var(--gold);
       padding: 6px 15px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; cursor: pointer;
@@ -91,22 +83,44 @@
     .nav-links a { color: var(--text-gray); text-decoration: none; font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
     .nav-links a:hover, .nav-links a.active { color: var(--gold); }
 
-    /* Hero Banner Slider */
+    /* FULL BACKGROUND HERO BANNER SECTION */
     .hero-slider {
-      position: relative; max-width: 1400px; margin: 25px auto; height: 480px; border-radius: 12px;
+      position: relative; max-width: 1400px; margin: 20px auto; height: 550px; border-radius: 16px;
       overflow: hidden; border: 1px solid var(--card-border);
-      background: radial-gradient(circle at 70% 50%, #3a1c5e 0%, #0d0a14 70%);
+      /* Full luxury dark background image with gradient overlay */
+      background: linear-gradient(90deg, rgba(5,5,7,0.95) 0%, rgba(15,10,25,0.7) 50%, rgba(5,5,7,0.3) 100%), 
+                  url('https://images.unsplash.com/photo-1615397349754-cfa2066a298e?w=1600&auto=format&fit=crop') center/cover no-repeat;
       display: flex; align-items: center; padding: 0 80px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
     }
-    .hero-content { max-width: 550px; z-index: 2; }
-    .hero-subtitle { color: var(--gold); font-size: 0.9rem; letter-spacing: 3px; font-weight: 600; text-transform: uppercase; margin-bottom: 10px; }
-    .hero-title { font-family: 'Cinzel', serif; font-size: 2.8rem; line-height: 1.2; margin-bottom: 15px; }
-    .hero-title span { color: var(--gold); }
-    .hero-desc { color: var(--text-gray); font-size: 0.9rem; margin-bottom: 25px; }
-    .hero-btns { display: flex; gap: 15px; }
-    .btn-gold { background: var(--gold); color: #000; padding: 12px 28px; border: none; font-weight: 700; border-radius: 4px; cursor: pointer; text-transform: uppercase; font-size: 0.8rem; }
-    .btn-outline { background: transparent; color: #fff; padding: 12px 28px; border: 1px solid var(--gold); font-weight: 600; border-radius: 4px; cursor: pointer; text-transform: uppercase; font-size: 0.8rem; }
-    .hero-img { position: absolute; right: 80px; height: 85%; z-index: 1; filter: drop-shadow(0 0 30px rgba(212,175,55,0.3)); }
+
+    .hero-content { max-width: 580px; z-index: 2; }
+    .hero-subtitle { color: var(--gold); font-size: 0.95rem; letter-spacing: 4px; font-weight: 600; text-transform: uppercase; margin-bottom: 12px; }
+    .hero-title { font-family: 'Cinzel', serif; font-size: 3.2rem; line-height: 1.15; margin-bottom: 20px; font-weight: 700; }
+    .hero-title span { color: var(--gold); text-shadow: 0 0 20px rgba(212,175,55,0.4); }
+    .hero-desc { color: #d0d0d0; font-size: 0.95rem; margin-bottom: 30px; line-height: 1.6; }
+    .hero-btns { display: flex; gap: 18px; }
+    .btn-gold { background: var(--gold); color: #000; padding: 14px 32px; border: none; font-weight: 700; border-radius: 4px; cursor: pointer; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s; }
+    .btn-gold:hover { background: var(--gold-bright); transform: translateY(-2px); }
+    .btn-outline { background: rgba(0,0,0,0.4); color: #fff; padding: 14px 32px; border: 1px solid var(--gold); font-weight: 600; border-radius: 4px; cursor: pointer; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s; backdrop-filter: blur(5px); }
+    .btn-outline:hover { background: var(--gold); color: #000; }
+
+    /* Floating Royal Al Haya Custom Perfume Bottle Container */
+    .hero-bottle-wrap {
+      position: absolute; right: 80px; top: 50%; transform: translateY(-50%);
+      width: 320px; height: 420px;
+      display: flex; align-items: center; justify-content: center; z-index: 2;
+    }
+    .hero-bottle-wrap img {
+      max-height: 100%; max-width: 100%; object-fit: contain;
+      filter: drop-shadow(0 0 35px rgba(212, 175, 55, 0.4));
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
 
     /* Features Strip */
     .features-strip {
@@ -124,27 +138,16 @@
     .section-divider { display: flex; align-items: center; justify-content: center; gap: 15px; color: var(--gold); font-size: 0.8rem; margin-top: 5px; }
 
     /* Categories Grid */
-    .categories-grid {
-      max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(10, 1fr); gap: 12px;
-    }
-    .category-card {
-      background: var(--card-glass); border: 1px solid var(--card-border); border-radius: 8px;
-      padding: 15px 5px; text-align: center; cursor: pointer; transition: 0.3s;
-    }
+    .categories-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(10, 1fr); gap: 12px; }
+    .category-card { background: var(--card-glass); border: 1px solid var(--card-border); border-radius: 8px; padding: 15px 5px; text-align: center; cursor: pointer; transition: 0.3s; }
     .category-card:hover { transform: translateY(-5px); border-color: var(--gold); background: rgba(212,175,55,0.1); }
     .category-card img { width: 55px; height: 55px; object-fit: contain; margin-bottom: 8px; }
     .category-card h5 { font-size: 0.7rem; color: #fff; font-weight: 600; text-transform: uppercase; }
 
     /* Promotional Banners */
-    .promo-grid {
-      max-width: 1400px; margin: 40px auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-    }
-    .promo-card {
-      height: 180px; border-radius: 10px; border: 1px solid var(--card-border); padding: 25px;
-      display: flex; flex-direction: column; justify-content: center; background-size: cover; background-position: center;
-      position: relative; overflow: hidden;
-    }
-    .promo-card::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
+    .promo-grid { max-width: 1400px; margin: 40px auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .promo-card { height: 180px; border-radius: 10px; border: 1px solid var(--card-border); padding: 25px; display: flex; flex-direction: column; justify-content: center; background-size: cover; background-position: center; position: relative; overflow: hidden; }
+    .promo-card::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.65); }
     .promo-content { position: relative; z-index: 2; }
     .promo-card h4 { color: var(--gold); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; }
     .promo-card h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; margin: 5px 0 12px; }
@@ -157,14 +160,10 @@
     .tab-item.active { background: rgba(212,175,55,0.2); color: var(--gold); border: 1px solid var(--gold); }
 
     .products-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
-    .product-card {
-      background: var(--card-glass); border: 1px solid var(--card-border); border-radius: 10px;
-      overflow: hidden; position: relative; transition: 0.3s; display: flex; flex-direction: column;
-    }
+    .product-card { background: var(--card-glass); border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; position: relative; transition: 0.3s; display: flex; flex-direction: column; }
     .product-card:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 10px 25px rgba(0,0,0,0.8); }
     .tag-badge { position: absolute; top: 10px; left: 10px; background: var(--gold); color: #000; font-size: 0.6rem; font-weight: bold; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; z-index: 2; }
     .wishlist-icon { position: absolute; top: 10px; right: 10px; color: var(--text-gray); font-size: 0.9rem; cursor: pointer; z-index: 2; }
-    .wishlist-icon:hover { color: #ff4757; }
     
     .product-img-box { height: 220px; padding: 15px; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%); }
     .product-img-box img { max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5)); }
@@ -191,14 +190,13 @@
     @media (max-width: 1200px) {
       .products-grid { grid-template-columns: repeat(3, 1fr); }
       .categories-grid { grid-template-columns: repeat(5, 1fr); }
-      .features-strip { grid-template-columns: repeat(4, 1fr); gap: 15px; }
+      .hero-bottle-wrap { width: 250px; right: 30px; }
     }
     @media (max-width: 768px) {
       .products-grid { grid-template-columns: repeat(2, 1fr); }
       .categories-grid { grid-template-columns: repeat(3, 1fr); }
-      .promo-grid { grid-template-columns: 1fr; }
       .hero-slider { padding: 30px; height: auto; flex-direction: column; text-align: center; }
-      .hero-img { position: relative; right: 0; height: 220px; margin-top: 20px; }
+      .hero-bottle-wrap { position: relative; right: 0; transform: none; margin-top: 20px; width: 200px; height: 260px; }
     }
   </style>
 </head>
@@ -252,7 +250,7 @@
     </div>
   </header>
 
-  <!-- Hero Slider Section -->
+  <!-- LUXURY HERO BANNER WITH TRANSPARENT BOTTLE -->
   <section class="hero-slider">
     <div class="hero-content">
       <div class="hero-subtitle">LUXURY FRAGRANCES</div>
@@ -263,7 +261,11 @@
         <button class="btn-outline">DISCOVER COLLECTION</button>
       </div>
     </div>
-    <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=600" class="hero-img" alt="Luxury Fragrance">
+
+    <!-- Isolated Floating Bottle Image without White Box -->
+    <div class="hero-bottle-wrap">
+      <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=800&auto=format&fit=crop" alt="Al Haya Royal Perfume">
+    </div>
   </section>
 
   <!-- Features Strip -->
