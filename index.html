@@ -106,6 +106,7 @@ body{background:#0A080E}
 </div>
 
 <div class="lg:col-span-6 relative flex justify-center items-center">
+<img src="https://burst.shopifycdn.com/photos/rose-on-black-background.jpg?width=1400&format=pjpg&exif=0&iptc=0" onerror="this.style.opacity=0" alt="" class="absolute inset-0 w-full h-full object-cover rounded-3xl opacity-25 mix-blend-screen pointer-events-none">
 <div class="absolute -left-6 top-6 w-72 h-72 bg-teal-500/20 rounded-full blur-3xl pointer-events-none"></div>
 <div class="absolute -right-6 bottom-6 w-72 h-72 bg-rose-600/25 rounded-full blur-3xl pointer-events-none"></div>
 <div class="relative w-full max-w-md h-[400px] flex items-center justify-center">
@@ -113,7 +114,7 @@ body{background:#0A080E}
 <i class="fa-solid fa-gem absolute left-10 bottom-16 text-amber-600/80 text-xl rotate-[-15deg] drop-shadow-lg"></i>
 <i class="fa-solid fa-gem absolute left-20 bottom-8 text-rose-700/70 text-sm rotate-[20deg] drop-shadow-lg"></i>
 <i class="fa-solid fa-gem absolute right-16 bottom-10 text-teal-500/60 text-base rotate-[10deg] drop-shadow-lg"></i>
-<i class="fa-solid fa-rose absolute -bottom-1 -right-1 text-5xl text-rose-800/90 drop-shadow-lg"></i>
+<img src="https://burst.shopifycdn.com/photos/three-roses-in-a-red-glass-vase.jpg?width=400&format=pjpg&exif=0&iptc=0" onerror="this.style.display='none'" alt="rose" class="absolute -bottom-2 -right-2 w-24 h-24 rounded-full object-cover border-2 border-gold/50 shadow-2xl">
 
 <div class="relative z-10 floaty filter drop-shadow-[0_25px_35px_rgba(0,0,0,.85)]">
 <svg class="w-64 h-96" viewBox="0 0 300 420" xmlns="http://www.w3.org/2000/svg">
@@ -155,6 +156,8 @@ body{background:#0A080E}
 <section class="py-6 px-4 max-w-7xl mx-auto w-full">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 <div class="relative glass rounded-xl p-6 overflow-hidden border border-purple-500/30 flex flex-col justify-between min-h-[220px]">
+<img src="https://burst.shopifycdn.com/photos/rose-on-black-background.jpg?width=700&format=pjpg&exif=0&iptc=0" onerror="this.style.display='none'" alt="" class="absolute inset-0 w-full h-full object-cover opacity-30">
+<div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/70 to-transparent"></div>
 <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-purple-600/20 rounded-full blur-2xl"></div>
 <div class="relative z-10 space-y-2"><span class="text-red-400 font-semibold text-[10px] tracking-widest uppercase border border-red-500/30 px-2 py-0.5 rounded-sm bg-red-950/40">Limited Edition</span><h3 class="font-serif text-lg font-bold text-white">Exclusive Collection</h3><p class="text-xs text-gray-400">Crafted for connoisseurs of pure oriental fragrance.</p></div>
 <button onclick="openModal('Exclusive Collection','Browsing Limited Batch #109 vault products.')" class="relative z-10 mt-4 btn-outline px-4 py-2 text-xs uppercase tracking-wider rounded-sm w-fit">Explore Now</button>
@@ -165,6 +168,8 @@ body{background:#0A080E}
 <button onclick="startQuiz()" class="relative z-10 mt-4 btn-gold px-4 py-2 text-xs uppercase tracking-wider rounded-sm w-fit">Take Quiz</button>
 </div>
 <div class="relative glass rounded-xl p-6 overflow-hidden border border-amber-500/30 flex flex-col justify-between min-h-[220px]">
+<img src="https://burst.shopifycdn.com/photos/colorful-background-with-gold-jewelry-displayed-on-it.jpg?width=700&format=pjpg&exif=0&iptc=0" onerror="this.style.display='none'" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25">
+<div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/70 to-transparent"></div>
 <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-amber-600/20 rounded-full blur-2xl"></div>
 <div class="relative z-10 space-y-2"><span class="text-gold font-semibold text-[10px] tracking-widest uppercase border border-gold/30 px-2 py-0.5 rounded-sm bg-amber-950/40">Gift Sets</span><h3 class="font-serif text-lg font-bold text-white">For Every Occasion</h3><p class="text-xs text-gray-400">Elegant box sets for weddings and celebrations.</p></div>
 <button onclick="openModal('Gift Sets Collection','Custom hamper options and royal gift boxes.')" class="relative z-10 mt-4 btn-outline px-4 py-2 text-xs uppercase tracking-wider rounded-sm w-fit">Shop Gift Sets</button>
@@ -244,28 +249,29 @@ body{background:#0A080E}
 const FEATURES=[['shield-halved','100% ORIGINAL','FRAGRANCE'],['droplet','PREMIUM QUALITY','OILS'],['clock-rotate-left','LONG','LASTING'],['gift','LUXURY','PACKAGING'],['truck-ramp-box','FAST & SAFE','DELIVERY'],['rotate-left','EASY','RETURNS'],['lock','SECURE','PAYMENTS'],['money-bill-wave','CASH ON','DELIVERY']];
 document.getElementById('features').innerHTML=FEATURES.map(f=>`<div class="glass rounded-xl p-3 text-center flex flex-col items-center justify-center gap-2 group transition"><i class="fa-solid fa-${f[0]} text-gold text-xl group-hover:scale-110 transition"></i><p class="text-[10px] font-bold text-gray-200 tracking-wider">${f[1]}<br><span class="text-gray-400 font-normal">${f[2]}</span></p></div>`).join('');
 
-const CATS=[['ATTAR','vial','from-amber-950'],['OUD','gem','from-yellow-950'],['ARABIC PERFUMES','mosque','from-blue-950'],['MUSK','feather','from-purple-950'],['ROSE','spa','from-rose-950'],['FLORAL','seedling','from-fuchsia-950'],['WOODY','tree','from-orange-950'],['FRESH','wind','from-teal-950'],['LUXURY COLLECTION','crown','from-amber-900'],['GIFT SETS','box-open','from-indigo-950']];
-document.getElementById('cat-container').innerHTML=CATS.map(c=>`<div class="min-w-[140px] md:min-w-[160px] glass rounded-lg p-4 text-center flex flex-col items-center justify-between group cursor-pointer hover:-translate-y-1 transition duration-300"><div class="w-20 h-24 rounded-md bg-gradient-to-b ${c[2]} to-black border border-gold/25 flex items-center justify-center mb-3 shadow-inner group-hover:border-gold transition"><i class="fa-solid fa-${c[1]} text-3xl text-gold group-hover:scale-125 transition duration-300"></i></div><h3 class="font-serif text-xs font-bold text-gray-200 group-hover:text-gold tracking-wider">${c[0]}</h3></div>`).join('');
+const CATS=[['ATTAR','vial','from-amber-950','antique-mirror-with-perfume-and-earrings'],['OUD','gem','from-yellow-950',''],['ARABIC PERFUMES','mosque','from-blue-950',''],['MUSK','feather','from-purple-950',''],['ROSE','spa','from-rose-950','three-roses-in-a-red-glass-vase'],['FLORAL','seedling','from-fuchsia-950','pink-rose-petals-against-a-dark-green-background'],['WOODY','tree','from-orange-950',''],['FRESH','wind','from-teal-950',''],['LUXURY COLLECTION','crown','from-amber-900','dainty-gold-necklace'],['GIFT SETS','box-open','from-indigo-950','colorful-background-with-gold-jewelry-displayed-on-it']];
+document.getElementById('cat-container').innerHTML=CATS.map(c=>`<div class="min-w-[140px] md:min-w-[160px] glass rounded-lg p-4 text-center flex flex-col items-center justify-between group cursor-pointer hover:-translate-y-1 transition duration-300"><div class="relative w-20 h-24 rounded-md overflow-hidden bg-gradient-to-b ${c[2]} to-black border border-gold/25 flex items-center justify-center mb-3 shadow-inner group-hover:border-gold transition">${c[3]?`<img src="https://burst.shopifycdn.com/photos/${c[3]}.jpg?width=300&format=pjpg&exif=0&iptc=0" onerror="this.style.display='none'" alt="" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition">`:''}<i class="fa-solid fa-${c[1]} relative text-3xl text-gold group-hover:scale-125 transition duration-300 drop-shadow-[0_2px_6px_rgba(0,0,0,.8)]"></i></div><h3 class="font-serif text-xs font-bold text-gray-200 group-hover:text-gold tracking-wider">${c[0]}</h3></div>`).join('');
 
 const PRODUCTS=[
-{n:'OUD AL HAYA',icon:'bottle-droplet',glow:'rgba(212,175,55,.45)',color:'text-gold',badge:'BEST SELLER',badgeCls:'bg-gold/90 text-black',price:1299,range:'₹1,299 – ₹4,999',stars:5,rev:120},
-{n:'MUSK AL TAHARA',icon:'bottle-water',glow:'rgba(255,255,255,.35)',color:'text-gray-100',badge:'NEW',badgeCls:'bg-teal-500/90 text-black',price:999,range:'₹999 – ₹3,999',stars:5,rev:98},
-{n:'ROSE AL HAYA',icon:'whiskey-glass',glow:'rgba(244,63,94,.4)',color:'text-rose-500',badge:'LIMITED',badgeCls:'bg-red-600/90 text-white',price:1199,range:'₹1,199 – ₹4,299',stars:5,rev:76},
-{n:'AMBER OUD',icon:'flask',glow:'rgba(245,158,11,.4)',color:'text-amber-500',badge:'BEST SELLER',badgeCls:'bg-gold/90 text-black',price:1499,range:'₹1,499 – ₹5,499',stars:4,rev:110},
-{n:'SANDAL MUSK',icon:'wine-bottle',glow:'rgba(251,146,60,.4)',color:'text-orange-400',badge:'NEW',badgeCls:'bg-teal-500/90 text-black',price:999,range:'₹999 – ₹3,499',stars:5,rev:67}
+{n:'OUD AL HAYA',icon:'bottle-droplet',glow:'rgba(212,175,55,.45)',color:'text-gold',badge:'BEST SELLER',badgeCls:'bg-gold/90 text-black',price:1299,range:'₹1,299 – ₹4,999',stars:5,rev:120,photo:'7-chakra-bracelet'},
+{n:'MUSK AL TAHARA',icon:'bottle-water',glow:'rgba(255,255,255,.35)',color:'text-gray-100',badge:'NEW',badgeCls:'bg-teal-500/90 text-black',price:999,range:'₹999 – ₹3,999',stars:5,rev:98,photo:'marble-earrings'},
+{n:'ROSE AL HAYA',icon:'whiskey-glass',glow:'rgba(244,63,94,.4)',color:'text-rose-500',badge:'LIMITED',badgeCls:'bg-red-600/90 text-white',price:1199,range:'₹1,199 – ₹4,299',stars:5,rev:76,photo:'rose-on-black-background'},
+{n:'AMBER OUD',icon:'flask',glow:'rgba(245,158,11,.4)',color:'text-amber-500',badge:'BEST SELLER',badgeCls:'bg-gold/90 text-black',price:1499,range:'₹1,499 – ₹5,499',stars:4,rev:110,photo:'dainty-gold-necklace'},
+{n:'SANDAL MUSK',icon:'wine-bottle',glow:'rgba(251,146,60,.4)',color:'text-orange-400',badge:'NEW',badgeCls:'bg-teal-500/90 text-black',price:999,range:'₹999 – ₹3,499',stars:5,rev:67,photo:'gemstone-necklace'}
 ];
 document.getElementById('product-grid').innerHTML=PRODUCTS.map(p=>`
 <div class="glass rounded-lg p-4 flex flex-col justify-between group relative">
 <span class="absolute top-3 left-3 ${p.badgeCls} text-[9px] font-bold px-2 py-0.5 rounded uppercase">${p.badge}</span>
 <button onclick="toggleWishlist(this)" class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-sm"><i class="fa-regular fa-heart"></i></button>
-<div class="my-4 h-44 flex items-center justify-center rounded-md p-2 group-hover:scale-105 transition duration-300" style="background:radial-gradient(circle,${p.glow} 0%,rgba(0,0,0,.55) 70%)"><i class="fa-solid fa-${p.icon} text-6xl ${p.color} filter drop-shadow-[0_0_15px_${p.glow}]"></i></div>
+<div class="relative my-4 h-44 flex items-center justify-center rounded-md p-2 overflow-hidden group-hover:scale-105 transition duration-300" style="background:radial-gradient(circle,${p.glow} 0%,rgba(0,0,0,.55) 70%)"><img src="https://burst.shopifycdn.com/photos/${p.photo}.jpg?width=400&format=pjpg&exif=0&iptc=0" onerror="this.style.display='none'" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25 blur-[1px]"><i class="fa-solid fa-${p.icon} relative text-6xl ${p.color} filter drop-shadow-[0_0_15px_${p.glow}]"></i></div>
 <div><h3 class="font-serif font-bold text-sm text-white group-hover:text-gold transition">${p.n}</h3><p class="text-[11px] text-gray-400 mb-1">Extrait De Parfum</p>
 <div class="flex items-center text-amber-400 text-[10px] gap-1 mb-2">${'<i class="fa-solid fa-star"></i>'.repeat(p.stars)}${'<i class="fa-regular fa-star"></i>'.repeat(5-p.stars)}<span class="text-gray-400 ml-1">(${p.rev})</span></div>
 <p class="font-bold text-gold text-sm mb-3">${p.range}</p>
 <button onclick="addToCart('${p.n}',${p.price})" class="w-full btn-gold py-2 text-xs uppercase tracking-wider rounded-sm">Add To Cart</button></div>
 </div>`).join('');
 
-let ig='';for(let i=0;i<7;i++){ig+=`<div class="relative h-32 rounded-lg bg-gradient-to-tr from-amber-950 via-purple-950 to-black border border-gold/20 flex items-center justify-center overflow-hidden group cursor-pointer"><i class="fa-solid fa-spray-can text-3xl text-gold/40 group-hover:scale-125 transition duration-300"></i><div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition"><i class="fa-brands fa-instagram text-gold text-2xl"></i></div></div>`}
+const IG=['rose-on-black-background','three-roses-in-a-red-glass-vase','dainty-gold-necklace','pink-rose-petals-against-a-dark-green-background','gemstone-necklace','marble-earrings','colorful-background-with-gold-jewelry-displayed-on-it'];
+let ig='';IG.forEach(s=>{ig+=`<div class="relative h-32 rounded-lg bg-gradient-to-tr from-amber-950 via-purple-950 to-black border border-gold/20 flex items-center justify-center overflow-hidden group cursor-pointer"><img src="https://burst.shopifycdn.com/photos/${s}.jpg?width=300&format=pjpg&exif=0&iptc=0" onerror="this.style.display='none'" alt="" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-300"><div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 flex items-center justify-center transition"><i class="fa-brands fa-instagram text-gold text-2xl opacity-0 group-hover:opacity-100 transition"></i></div></div>`})
 ig+=`<div class="h-32 rounded-lg glass p-3 text-center flex flex-col items-center justify-center gap-2"><i class="fa-brands fa-instagram text-2xl text-gold"></i><p class="text-[10px] font-bold text-gray-200">@alhaya.perfumes</p><a href="https://instagram.com" target="_blank" class="btn-gold px-3 py-1 text-[9px] uppercase tracking-wider rounded-sm">Follow Us</a></div>`;
 document.getElementById('insta-grid').innerHTML=ig;
 
