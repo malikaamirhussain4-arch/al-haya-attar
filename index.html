@@ -36,6 +36,8 @@ body{background:#0A080E}
 .floaty{animation:float 5s ease-in-out infinite}
 @keyframes twinkle{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:1;transform:scale(1.2)}}
 .spark{position:absolute;border-radius:50%;animation:twinkle 3s ease-in-out infinite}
+.bottle-img{filter:drop-shadow(0 15px 25px rgba(0,0,0,0.85));mix-blend-mode:luminosity;transition:transform 0.4s ease}
+.group:hover .bottle-img{transform:scale(1.08) translateY(-5px)}
 </style>
 </head>
 <body class="text-gray-200 font-sans antialiased min-h-screen flex flex-col selection:bg-gold selection:text-black">
@@ -106,35 +108,14 @@ body{background:#0A080E}
 </div>
 
 <div class="lg:col-span-6 relative flex justify-center items-center">
-<img src="https://burst.shopifycdn.com/photos/rose-on-black-background.jpg?width=1400&format=pjpg&exif=0&iptc=0" onerror="this.style.opacity=0" alt="" class="absolute inset-0 w-full h-full object-cover rounded-3xl opacity-25 mix-blend-screen pointer-events-none">
 <div class="absolute -left-6 top-6 w-72 h-72 bg-teal-500/20 rounded-full blur-3xl pointer-events-none"></div>
 <div class="absolute -right-6 bottom-6 w-72 h-72 bg-rose-600/25 rounded-full blur-3xl pointer-events-none"></div>
 <div class="relative w-full max-w-md h-[400px] flex items-center justify-center">
 <div class="absolute bottom-2 w-72 h-16 bg-gradient-to-t from-gold/25 via-black/80 to-transparent rounded-[100%] blur-sm border-t border-gold/30"></div>
-<i class="fa-solid fa-gem absolute left-10 bottom-16 text-amber-600/80 text-xl rotate-[-15deg] drop-shadow-lg"></i>
-<i class="fa-solid fa-gem absolute left-20 bottom-8 text-rose-700/70 text-sm rotate-[20deg] drop-shadow-lg"></i>
-<i class="fa-solid fa-gem absolute right-16 bottom-10 text-teal-500/60 text-base rotate-[10deg] drop-shadow-lg"></i>
-<img src="https://burst.shopifycdn.com/photos/three-roses-in-a-red-glass-vase.jpg?width=400&format=pjpg&exif=0&iptc=0" onerror="this.style.display='none'" alt="rose" class="absolute -bottom-2 -right-2 w-24 h-24 rounded-full object-cover border-2 border-gold/50 shadow-2xl">
 
-<div class="relative z-10 floaty filter drop-shadow-[0_25px_35px_rgba(0,0,0,.85)]">
-<svg class="w-64 h-96" viewBox="0 0 300 420" xmlns="http://www.w3.org/2000/svg">
-<polygon points="150,10 172,40 195,55 172,70 150,100 128,70 105,55 128,40" fill="url(#capGrad)" stroke="#FFE57F" stroke-width="1.2"/>
-<polygon points="150,10 172,40 150,55 128,40" fill="#FFF" fill-opacity=".3"/>
-<rect x="140" y="100" width="20" height="18" fill="url(#metal)" rx="2"/>
-<path d="M88 128 C88 116 212 116 212 128 L228 335 C228 358 72 358 72 335 Z" fill="url(#glass)" stroke="#D4AF37" stroke-width="2"/>
-<path d="M96 132 L104 330" stroke="#fff" stroke-opacity=".15" stroke-width="4"/>
-<path d="M82 195 C120 183 180 205 218 193 L223 333 C223 350 77 350 77 333 Z" fill="url(#amber)" fill-opacity=".9"/>
-<rect x="108" y="195" width="84" height="92" rx="4" fill="#0A080E" stroke="#D4AF37" stroke-width="1.3"/>
-<path d="M150 210 L158 223 L142 223 Z" fill="#D4AF37"/>
-<text x="150" y="241" text-anchor="middle" fill="#D4AF37" font-family="Cinzel" font-size="11" font-weight="700">AL HAYA</text>
-<text x="150" y="254" text-anchor="middle" fill="#E8C766" font-size="5.5" letter-spacing="1.5">ATTAR &amp; PERFUMES</text>
-<defs>
-<linearGradient id="capGrad" x1="105" y1="10" x2="195" y2="100" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF3C4"/><stop offset=".5" stop-color="#D4AF37"/><stop offset="1" stop-color="#5C420C"/></linearGradient>
-<linearGradient id="metal" x1="140" y1="100" x2="160" y2="118" gradientUnits="userSpaceOnUse"><stop stop-color="#F3E5AB"/><stop offset=".5" stop-color="#9C7519"/><stop offset="1" stop-color="#FFE57F"/></linearGradient>
-<linearGradient id="glass" x1="72" y1="116" x2="228" y2="358" gradientUnits="userSpaceOnUse"><stop stop-color="#241C30" stop-opacity=".92"/><stop offset=".5" stop-color="#0A080E" stop-opacity=".96"/><stop offset="1" stop-color="#1B1428" stop-opacity=".92"/></linearGradient>
-<linearGradient id="amber" x1="82" y1="195" x2="223" y2="350" gradientUnits="userSpaceOnUse"><stop stop-color="#E8C766"/><stop offset=".5" stop-color="#9A6A2E"/><stop offset="1" stop-color="#4A150B"/></linearGradient>
-</defs>
-</svg>
+<!-- Transparent Hero Bottle Image -->
+<div class="relative z-10 floaty filter drop-shadow-[0_25px_35px_rgba(0,0,0,.95)]">
+<img src="https://png.pngtree.com/png-clipart/20230508/original/pngtree-luxurious-perfume-bottle-in-black-and-gold-png-image_9153034.png" alt="Luxury Attar Bottle" class="w-72 h-96 object-contain pointer-events-none">
 </div>
 </div>
 </div>
@@ -156,23 +137,24 @@ body{background:#0A080E}
 <section class="py-6 px-4 max-w-7xl mx-auto w-full">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 <div class="relative glass rounded-xl p-6 overflow-hidden border border-purple-500/30 flex flex-col justify-between min-h-[220px]">
-<img src="https://burst.shopifycdn.com/photos/rose-on-black-background.jpg?width=700&format=pjpg&exif=0&iptc=0" onerror="this.style.display='none'" alt="" class="absolute inset-0 w-full h-full object-cover opacity-30">
-<div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/70 to-transparent"></div>
 <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-purple-600/20 rounded-full blur-2xl"></div>
 <div class="relative z-10 space-y-2"><span class="text-red-400 font-semibold text-[10px] tracking-widest uppercase border border-red-500/30 px-2 py-0.5 rounded-sm bg-red-950/40">Limited Edition</span><h3 class="font-serif text-lg font-bold text-white">Exclusive Collection</h3><p class="text-xs text-gray-400">Crafted for connoisseurs of pure oriental fragrance.</p></div>
 <button onclick="openModal('Exclusive Collection','Browsing Limited Batch #109 vault products.')" class="relative z-10 mt-4 btn-outline px-4 py-2 text-xs uppercase tracking-wider rounded-sm w-fit">Explore Now</button>
+<img src="https://png.pngtree.com/png-clipart/20230508/original/pngtree-luxurious-perfume-bottle-in-black-and-gold-png-image_9153034.png" alt="" class="absolute -right-4 -bottom-6 w-36 h-44 object-contain opacity-40 pointer-events-none">
 </div>
+
 <div class="relative glass rounded-xl p-6 overflow-hidden border border-teal-500/30 flex flex-col justify-between min-h-[220px]">
 <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-teal-600/20 rounded-full blur-2xl"></div>
 <div class="relative z-10 space-y-2"><span class="text-teal-400 font-semibold text-[10px] tracking-widest uppercase border border-teal-500/30 px-2 py-0.5 rounded-sm bg-teal-950/40">Discover Your</span><h3 class="font-serif text-lg font-bold text-white">Signature Scent</h3><p class="text-xs text-gray-400">Take our fragrance quiz, find your match in 2 minutes.</p></div>
 <button onclick="startQuiz()" class="relative z-10 mt-4 btn-gold px-4 py-2 text-xs uppercase tracking-wider rounded-sm w-fit">Take Quiz</button>
+<img src="https://png.pngtree.com/png-clipart/20230508/original/pngtree-glass-perfume-bottle-with-gold-cap-png-image_9153033.png" alt="" class="absolute -right-4 -bottom-6 w-36 h-44 object-contain opacity-40 pointer-events-none">
 </div>
+
 <div class="relative glass rounded-xl p-6 overflow-hidden border border-amber-500/30 flex flex-col justify-between min-h-[220px]">
-<img src="https://burst.shopifycdn.com/photos/colorful-background-with-gold-jewelry-displayed-on-it.jpg?width=700&format=pjpg&exif=0&iptc=0" onerror="this.style.display='none'" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25">
-<div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/70 to-transparent"></div>
 <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-amber-600/20 rounded-full blur-2xl"></div>
 <div class="relative z-10 space-y-2"><span class="text-gold font-semibold text-[10px] tracking-widest uppercase border border-gold/30 px-2 py-0.5 rounded-sm bg-amber-950/40">Gift Sets</span><h3 class="font-serif text-lg font-bold text-white">For Every Occasion</h3><p class="text-xs text-gray-400">Elegant box sets for weddings and celebrations.</p></div>
 <button onclick="openModal('Gift Sets Collection','Custom hamper options and royal gift boxes.')" class="relative z-10 mt-4 btn-outline px-4 py-2 text-xs uppercase tracking-wider rounded-sm w-fit">Shop Gift Sets</button>
+<img src="https://png.pngtree.com/png-clipart/20230508/original/pngtree-golden-perfume-bottle-design-png-image_9153035.png" alt="" class="absolute -right-4 -bottom-6 w-36 h-44 object-contain opacity-40 pointer-events-none">
 </div>
 </div>
 </section>
@@ -249,29 +231,58 @@ body{background:#0A080E}
 const FEATURES=[['shield-halved','100% ORIGINAL','FRAGRANCE'],['droplet','PREMIUM QUALITY','OILS'],['clock-rotate-left','LONG','LASTING'],['gift','LUXURY','PACKAGING'],['truck-ramp-box','FAST & SAFE','DELIVERY'],['rotate-left','EASY','RETURNS'],['lock','SECURE','PAYMENTS'],['money-bill-wave','CASH ON','DELIVERY']];
 document.getElementById('features').innerHTML=FEATURES.map(f=>`<div class="glass rounded-xl p-3 text-center flex flex-col items-center justify-center gap-2 group transition"><i class="fa-solid fa-${f[0]} text-gold text-xl group-hover:scale-110 transition"></i><p class="text-[10px] font-bold text-gray-200 tracking-wider">${f[1]}<br><span class="text-gray-400 font-normal">${f[2]}</span></p></div>`).join('');
 
-const CATS=[['ATTAR','vial','from-amber-950','https://burst.shopifycdn.com/photos/antique-mirror-with-perfume-and-earrings.jpg?width=300&format=pjpg&exif=0&iptc=0'],['OUD','gem','from-yellow-950',''],['ARABIC PERFUMES','mosque','from-blue-950',''],['MUSK','feather','from-purple-950',''],['ROSE','spa','from-rose-950','https://burst.shopifycdn.com/photos/three-roses-in-a-red-glass-vase.jpg?width=300&format=pjpg&exif=0&iptc=0'],['FLORAL','seedling','from-fuchsia-950','https://burst.shopifycdn.com/photos/pink-rose-petals-against-a-dark-green-background.jpg?width=300&format=pjpg&exif=0&iptc=0'],['WOODY','tree','from-orange-950',''],['FRESH','wind','from-teal-950',''],['LUXURY COLLECTION','crown','from-amber-900','https://burst.shopifycdn.com/photos/dainty-gold-necklace.jpg?width=300&format=pjpg&exif=0&iptc=0'],['GIFT SETS','box-open','from-indigo-950','https://burst.shopifycdn.com/photos/colorful-background-with-gold-jewelry-displayed-on-it.jpg?width=300&format=pjpg&exif=0&iptc=0']];
-document.getElementById('cat-container').innerHTML=CATS.map(c=>`<div class="min-w-[140px] md:min-w-[160px] glass rounded-lg p-4 text-center flex flex-col items-center justify-between group cursor-pointer hover:-translate-y-1 transition duration-300"><div class="relative w-20 h-24 rounded-md overflow-hidden bg-gradient-to-b ${c[2]} to-black border border-gold/25 flex items-center justify-center mb-3 shadow-inner group-hover:border-gold transition">${c[3]?`<img src="${c[3]}" onerror="this.style.display='none'" alt="" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition">`:''}<i class="fa-solid fa-${c[1]} relative text-3xl text-gold group-hover:scale-125 transition duration-300 drop-shadow-[0_2px_6px_rgba(0,0,0,.8)]"></i></div><h3 class="font-serif text-xs font-bold text-gray-200 group-hover:text-gold tracking-wider">${c[0]}</h3></div>`).join('');
+const BOTTLE_URLS = [
+  'https://png.pngtree.com/png-clipart/20230508/original/pngtree-luxurious-perfume-bottle-in-black-and-gold-png-image_9153034.png',
+  'https://png.pngtree.com/png-clipart/20230508/original/pngtree-glass-perfume-bottle-with-gold-cap-png-image_9153033.png',
+  'https://png.pngtree.com/png-clipart/20230508/original/pngtree-golden-perfume-bottle-design-png-image_9153035.png',
+  'https://png.pngtree.com/png-clipart/20230508/original/pngtree-elegant-black-glass-perfume-bottle-png-image_9153036.png'
+];
+
+const CATS=[
+['ATTAR', BOTTLE_URLS[0]],
+['OUD', BOTTLE_URLS[1]],
+['ARABIC PERFUMES', BOTTLE_URLS[2]],
+['MUSK', BOTTLE_URLS[3]],
+['ROSE', BOTTLE_URLS[0]],
+['FLORAL', BOTTLE_URLS[1]],
+['WOODY', BOTTLE_URLS[2]],
+['FRESH', BOTTLE_URLS[3]],
+['LUXURY COLLECTION', BOTTLE_URLS[0]],
+['GIFT SETS', BOTTLE_URLS[1]]
+];
+
+document.getElementById('cat-container').innerHTML=CATS.map(c=>`
+<div class="min-w-[140px] md:min-w-[160px] glass rounded-lg p-4 text-center flex flex-col items-center justify-between group cursor-pointer hover:-translate-y-1 transition duration-300">
+  <div class="relative w-20 h-28 flex items-center justify-center mb-3">
+    <div class="absolute inset-0 bg-gold/10 rounded-full blur-md group-hover:bg-gold/25 transition"></div>
+    <img src="${c[1]}" alt="${c[0]}" class="relative w-full h-full object-contain bottle-img">
+  </div>
+  <h3 class="font-serif text-xs font-bold text-gray-200 group-hover:text-gold tracking-wider">${c[0]}</h3>
+</div>`).join('');
 
 const PRODUCTS=[
-{n:'OUD AL HAYA',icon:'bottle-droplet',glow:'rgba(212,175,55,.45)',color:'text-gold',badge:'BEST SELLER',badgeCls:'bg-gold/90 text-black',price:1299,range:'₹1,299 – ₹4,999',stars:5,rev:120,photo:'https://burst.shopifycdn.com/photos/7-chakra-bracelet.jpg?width=400&format=pjpg&exif=0&iptc=0'},
-{n:'MUSK AL TAHARA',icon:'bottle-water',glow:'rgba(255,255,255,.35)',color:'text-gray-100',badge:'NEW',badgeCls:'bg-teal-500/90 text-black',price:999,range:'₹999 – ₹3,999',stars:5,rev:98,photo:'https://burst.shopifycdn.com/photos/marble-earrings.jpg?width=400&format=pjpg&exif=0&iptc=0'},
-{n:'ROSE AL HAYA',icon:'whiskey-glass',glow:'rgba(244,63,94,.4)',color:'text-rose-500',badge:'LIMITED',badgeCls:'bg-red-600/90 text-white',price:1199,range:'₹1,199 – ₹4,299',stars:5,rev:76,photo:'https://burst.shopifycdn.com/photos/rose-on-black-background.jpg?width=400&format=pjpg&exif=0&iptc=0'},
-{n:'AMBER OUD',icon:'flask',glow:'rgba(245,158,11,.4)',color:'text-amber-500',badge:'BEST SELLER',badgeCls:'bg-gold/90 text-black',price:1499,range:'₹1,499 – ₹5,499',stars:4,rev:110,photo:'https://burst.shopifycdn.com/photos/dainty-gold-necklace.jpg?width=400&format=pjpg&exif=0&iptc=0'},
-{n:'SANDAL MUSK',icon:'wine-bottle',glow:'rgba(251,146,60,.4)',color:'text-orange-400',badge:'NEW',badgeCls:'bg-teal-500/90 text-black',price:999,range:'₹999 – ₹3,499',stars:5,rev:67,photo:'https://burst.shopifycdn.com/photos/gemstone-necklace.jpg?width=400&format=pjpg&exif=0&iptc=0'}
+{n:'OUD AL HAYA',glow:'rgba(212,175,55,.45)',badge:'BEST SELLER',badgeCls:'bg-gold/90 text-black',price:1299,range:'₹1,299 – ₹4,999',stars:5,rev:120,photo:BOTTLE_URLS[0]},
+{n:'MUSK AL TAHARA',glow:'rgba(255,255,255,.35)',badge:'NEW',badgeCls:'bg-teal-500/90 text-black',price:999,range:'₹999 – ₹3,999',stars:5,rev:98,photo:BOTTLE_URLS[1]},
+{n:'ROSE AL HAYA',glow:'rgba(244,63,94,.4)',badge:'LIMITED',badgeCls:'bg-red-600/90 text-white',price:1199,range:'₹1,199 – ₹4,299',stars:5,rev:76,photo:BOTTLE_URLS[2]},
+{n:'AMBER OUD',glow:'rgba(245,158,11,.4)',badge:'BEST SELLER',badgeCls:'bg-gold/90 text-black',price:1499,range:'₹1,499 – ₹5,499',stars:4,rev:110,photo:BOTTLE_URLS[3]},
+{n:'SANDAL MUSK',glow:'rgba(251,146,60,.4)',badge:'NEW',badgeCls:'bg-teal-500/90 text-black',price:999,range:'₹999 – ₹3,499',stars:5,rev:67,photo:BOTTLE_URLS[0]}
 ];
+
 document.getElementById('product-grid').innerHTML=PRODUCTS.map(p=>`
 <div class="glass rounded-lg p-4 flex flex-col justify-between group relative">
-<span class="absolute top-3 left-3 ${p.badgeCls} text-[9px] font-bold px-2 py-0.5 rounded uppercase">${p.badge}</span>
-<button onclick="toggleWishlist(this)" class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-sm"><i class="fa-regular fa-heart"></i></button>
-<div class="relative my-4 h-44 flex items-center justify-center rounded-md p-2 overflow-hidden group-hover:scale-105 transition duration-300" style="background:radial-gradient(circle,${p.glow} 0%,rgba(0,0,0,.55) 70%)"><img src="${p.photo}" onerror="this.style.display='none'" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25 blur-[1px]"><i class="fa-solid fa-${p.icon} relative text-6xl ${p.color} filter drop-shadow-[0_0_15px_${p.glow}]"></i></div>
+<span class="absolute top-3 left-3 z-10 ${p.badgeCls} text-[9px] font-bold px-2 py-0.5 rounded uppercase">${p.badge}</span>
+<button onclick="toggleWishlist(this)" class="absolute top-3 right-3 z-10 text-gray-400 hover:text-red-500 text-sm"><i class="fa-regular fa-heart"></i></button>
+<div class="relative my-4 h-48 flex items-center justify-center rounded-md p-2" style="background:radial-gradient(circle,${p.glow} 0%,rgba(0,0,0,0) 70%)">
+  <img src="${p.photo}" alt="${p.n}" class="h-44 object-contain bottle-img">
+</div>
 <div><h3 class="font-serif font-bold text-sm text-white group-hover:text-gold transition">${p.n}</h3><p class="text-[11px] text-gray-400 mb-1">Extrait De Parfum</p>
 <div class="flex items-center text-amber-400 text-[10px] gap-1 mb-2">${'<i class="fa-solid fa-star"></i>'.repeat(p.stars)}${'<i class="fa-regular fa-star"></i>'.repeat(5-p.stars)}<span class="text-gray-400 ml-1">(${p.rev})</span></div>
 <p class="font-bold text-gold text-sm mb-3">${p.range}</p>
 <button onclick="addToCart('${p.n}',${p.price})" class="w-full btn-gold py-2 text-xs uppercase tracking-wider rounded-sm">Add To Cart</button></div>
 </div>`).join('');
 
-const IG=['https://burst.shopifycdn.com/photos/rose-on-black-background.jpg?width=300&format=pjpg&exif=0&iptc=0','https://burst.shopifycdn.com/photos/three-roses-in-a-red-glass-vase.jpg?width=300&format=pjpg&exif=0&iptc=0','https://burst.shopifycdn.com/photos/dainty-gold-necklace.jpg?width=300&format=pjpg&exif=0&iptc=0','https://burst.shopifycdn.com/photos/pink-rose-petals-against-a-dark-green-background.jpg?width=300&format=pjpg&exif=0&iptc=0','https://burst.shopifycdn.com/photos/gemstone-necklace.jpg?width=300&format=pjpg&exif=0&iptc=0','https://burst.shopifycdn.com/photos/marble-earrings.jpg?width=300&format=pjpg&exif=0&iptc=0','https://burst.shopifycdn.com/photos/colorful-background-with-gold-jewelry-displayed-on-it.jpg?width=300&format=pjpg&exif=0&iptc=0'];
-let ig='';IG.forEach(s=>{ig+=`<div class="relative h-32 rounded-lg bg-gradient-to-tr from-amber-950 via-purple-950 to-black border border-gold/20 flex items-center justify-center overflow-hidden group cursor-pointer"><img src="${s}" onerror="this.style.display='none'" alt="" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-300"><div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 flex items-center justify-center transition"><i class="fa-brands fa-instagram text-gold text-2xl opacity-0 group-hover:opacity-100 transition"></i></div></div>`})
+const IG=[BOTTLE_URLS[0],BOTTLE_URLS[1],BOTTLE_URLS[2],BOTTLE_URLS[3],BOTTLE_URLS[0],BOTTLE_URLS[1],BOTTLE_URLS[2]];
+let ig='';IG.forEach(s=>{ig+=`<div class="relative h-32 rounded-lg bg-gradient-to-tr from-amber-950/40 via-purple-950/40 to-black border border-gold/20 flex items-center justify-center overflow-hidden group cursor-pointer"><img src="${s}" alt="" class="h-24 object-contain bottle-img"><div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 flex items-center justify-center transition"><i class="fa-brands fa-instagram text-gold text-2xl opacity-0 group-hover:opacity-100 transition"></i></div></div>`})
 ig+=`<div class="h-32 rounded-lg glass p-3 text-center flex flex-col items-center justify-center gap-2"><i class="fa-brands fa-instagram text-2xl text-gold"></i><p class="text-[10px] font-bold text-gray-200">@alhaya.perfumes</p><a href="https://instagram.com" target="_blank" class="btn-gold px-3 py-1 text-[9px] uppercase tracking-wider rounded-sm">Follow Us</a></div>`;
 document.getElementById('insta-grid').innerHTML=ig;
 
