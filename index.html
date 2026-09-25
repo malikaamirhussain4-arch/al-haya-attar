@@ -1,943 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AL HAYA - Attar and Perfumes | Official Luxury Store</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-family: Inter, sans-serif;">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts for Luxury Serif & Modern Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        gold: {
-                            DEFAULT: '#D4AF37',
-                            light: '#F3E5AB',
-                            dark: '#AA7C11',
-                            glow: '#FFE57F'
-                        },
-                        obsidian: '#0A080E',
-                        cardDark: 'rgba(18, 14, 24, 0.75)',
-                    },
-                    fontFamily: {
-                        serif: ['Cinzel', 'serif'],
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        /* Custom Custom Scrollbars & Glow Animations */
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0A080E;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #332814;
-            border-radius: 3px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #D4AF37;
-        }
-
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #FFF0B3 0%, #D4AF37 50%, #996B10 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .gold-border-gradient {
-            border-image: linear-gradient(to bottom, rgba(212, 175, 55, 0.6), rgba(212, 175, 55, 0.1)) 1;
-        }
-
-        .hero-bg {
-            background: radial-gradient(circle at 15% 50%, rgba(0, 180, 216, 0.25) 0%, transparent 45%),
-                        radial-gradient(circle at 85% 50%, rgba(186, 24, 119, 0.3) 0%, transparent 50%),
-                        radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.15) 0%, transparent 40%),
-                        #08060B;
-        }
-
-        .glass-card {
-            background: rgba(18, 14, 26, 0.65);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.22);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-        }
-
-        .glass-card:hover {
-            border-color: rgba(212, 175, 55, 0.6);
-            box-shadow: 0 10px 35px 0 rgba(212, 175, 55, 0.2);
-        }
-
-        .gold-button {
-            background: linear-gradient(135deg, #E6C258 0%, #C49726 100%);
-            color: #0A080E;
-            font-weight: 700;
-            transition: all 0.3s ease;
-        }
-        .gold-button:hover {
-            background: linear-gradient(135deg, #FFF0B3 0%, #D4AF37 100%);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
-            transform: translateY(-1px);
-        }
-
-        .gold-outline-btn {
-            border: 1px solid rgba(212, 175, 55, 0.6);
-            background: rgba(10, 8, 14, 0.6);
-            color: #E6C258;
-            transition: all 0.3s ease;
-        }
-        .gold-outline-btn:hover {
-            background: rgba(212, 175, 55, 0.15);
-            border-color: #D4AF37;
-            color: #FFF;
-        }
-
-        .filigree-line {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-        }
-        .filigree-line::before, .filigree-line::after {
-            content: '';
-            height: 1px;
-            width: 80px;
-            background: linear-gradient(to right, transparent, #D4AF37, transparent);
-        }
-
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AL HAYA — Attar &amp; Perfumes | Official Luxury Store</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏺</text></svg>">
+<script>
+tailwind.config={theme:{extend:{colors:{gold:{DEFAULT:'#D4AF37',light:'#F3E5AB',dark:'#8A6414',glow:'#FFE57F'},obsidian:'#0A080E',ink:'#050408'},fontFamily:{serif:['Cinzel','serif'],display:['Cormorant Garamond','serif'],sans:['Plus Jakarta Sans','sans-serif']}}}}
+</script>
+<style>
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:#0A080E}
+::-webkit-scrollbar-thumb{background:#3a2d14;border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:#D4AF37}
+body{background:#0A080E}
+.gold-text{background:linear-gradient(115deg,#FFF3C4 0%,#E8C766 30%,#D4AF37 55%,#9C7519 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200% auto;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.hero-bg{background:radial-gradient(circle at 12% 45%,rgba(13,148,136,.28) 0%,transparent 42%),radial-gradient(circle at 88% 55%,rgba(190,24,93,.32) 0%,transparent 48%),radial-gradient(circle at 50% 8%,rgba(212,175,55,.16) 0%,transparent 38%),#060509}
+.glass{background:rgba(20,15,28,.6);backdrop-filter:blur(14px);border:1px solid rgba(212,175,55,.18);box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.glass:hover{border-color:rgba(212,175,55,.55);box-shadow:0 14px 40px rgba(212,175,55,.15)}
+.btn-gold{background:linear-gradient(135deg,#F3D97F 0%,#C6952A 100%);color:#0A080E;font-weight:700;transition:.3s}
+.btn-gold:hover{box-shadow:0 0 22px rgba(212,175,55,.55);transform:translateY(-1px)}
+.btn-outline{border:1px solid rgba(212,175,55,.55);background:rgba(10,8,14,.5);color:#E8C766;transition:.3s}
+.btn-outline:hover{background:rgba(212,175,55,.12);border-color:#D4AF37;color:#fff}
+.rule{display:flex;align-items:center;justify-content:center;gap:14px}
+.rule::before,.rule::after{content:'';height:1px;width:60px;background:linear-gradient(to right,transparent,#D4AF37,transparent)}
+.no-bar::-webkit-scrollbar{display:none}
+.no-bar{-ms-overflow-style:none;scrollbar-width:none}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.floaty{animation:float 5s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:1;transform:scale(1.2)}}
+.spark{position:absolute;border-radius:50%;animation:twinkle 3s ease-in-out infinite}
+</style>
 </head>
-<body class="bg-obsidian text-gray-200 font-sans antialiased min-h-screen flex flex-col selection:bg-gold selection:text-black">
+<body class="text-gray-200 font-sans antialiased min-h-screen flex flex-col selection:bg-gold selection:text-black">
 
-    <!-- TOP UTILITY BAR -->
-    <header class="w-full bg-[#050407] text-xs py-2 px-4 border-b border-gold/10">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-gray-300">
-            <div class="flex items-center space-x-2 text-gold">
-                <i class="fa-solid fa-truck-fast"></i>
-                <span class="tracking-wide text-gray-200 font-medium">FREE SHIPPING ON ORDERS ABOVE ₹999</span>
-            </div>
-            <div class="flex items-center space-x-6 text-[11px]">
-                <a href="#" onclick="openModal('Track Order', 'Enter your tracking number (e.g., ALH-884920)')" class="hover:text-gold transition flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-gold"></i> Track Order</a>
-                <a href="#" onclick="openModal('Store Locator', 'Find our flagship boutiques in Mumbai, Delhi, Dubai and London.')" class="hover:text-gold transition flex items-center gap-1.5"><i class="fa-solid fa-store text-gold"></i> Store Locator</a>
-                <a href="#" onclick="openModal('Help & Support', 'Customer Care Available 24/7. Call: +91 98745 43210')" class="hover:text-gold transition flex items-center gap-1.5"><i class="fa-solid fa-headset text-gold"></i> Help & Support</a>
-                <div class="border-l border-gray-700 h-3 mx-1"></div>
-                <select class="bg-transparent text-gold cursor-pointer focus:outline-none">
-                    <option class="bg-black text-white">INR (₹)</option>
-                    <option class="bg-black text-white">AED (AED)</option>
-                    <option class="bg-black text-white">USD ($)</option>
-                </select>
-                <div class="flex items-center space-x-2 ml-2 text-gold">
-                    <a href="#" class="hover:scale-110 transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="hover:scale-110 transition"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" class="hover:scale-110 transition"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-    </header>
+<header class="w-full bg-ink text-[11px] py-2 px-4 border-b border-gold/10">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-gray-300">
+<div class="flex items-center gap-2 text-gold"><i class="fa-solid fa-truck-fast"></i><span class="text-gray-200 font-medium tracking-wide">FREE SHIPPING ON ORDERS ABOVE ₹999</span></div>
+<div class="flex items-center gap-5">
+<a href="#" onclick="openModal('Track Order','Enter your tracking number (e.g., ALH-884920)')" class="hover:text-gold transition flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-gold"></i>Track Order</a>
+<a href="#" onclick="openModal('Store Locator','Flagship boutiques in Mumbai, Delhi, Dubai and London.')" class="hover:text-gold transition flex items-center gap-1.5"><i class="fa-solid fa-store text-gold"></i>Store Locator</a>
+<a href="#" onclick="openModal('Help & Support','Customer Care available 24/7. Call: +91 98745 43210')" class="hover:text-gold transition flex items-center gap-1.5"><i class="fa-solid fa-headset text-gold"></i>Help &amp; Support</a>
+<div class="border-l border-gray-700 h-3"></div>
+<select class="bg-transparent text-gold cursor-pointer focus:outline-none"><option class="bg-black">INR (₹)</option><option class="bg-black">AED (AED)</option><option class="bg-black">USD ($)</option></select>
+<div class="flex items-center gap-2 text-gold"><a href="#" class="hover:scale-110 transition"><i class="fa-brands fa-instagram"></i></a><a href="#" class="hover:scale-110 transition"><i class="fa-brands fa-facebook"></i></a><a href="#" class="hover:scale-110 transition"><i class="fa-brands fa-youtube"></i></a></div>
+</div>
+</div>
+</header>
 
-    <!-- MAIN BRAND HEADER -->
-    <nav class="sticky top-0 z-40 bg-[#09070D]/95 backdrop-blur-md border-b border-gold/20">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-full border border-gold/40 flex items-center justify-center bg-gradient-to-br from-gold/20 to-transparent group-hover:border-gold transition">
-                    <!-- SVG Crown Logo Emblem -->
-                    <svg class="w-7 h-7 text-gold" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
-                    </svg>
-                </div>
-                <div>
-                    <h1 class="font-serif text-xl md:text-2xl font-bold tracking-widest text-gold leading-tight">AL HAYA</h1>
-                    <p class="text-[9px] tracking-[0.25em] text-gray-400 font-sans uppercase">Attar and Perfumes</p>
-                </div>
-            </a>
+<nav class="sticky top-0 z-40 bg-ink/95 backdrop-blur-md border-b border-gold/20">
+<div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+<a href="#" class="flex items-center gap-3 group">
+<div class="w-11 h-11 rounded-full border border-gold/40 flex items-center justify-center bg-gradient-to-br from-gold/25 to-transparent group-hover:border-gold transition">
+<svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
+</div>
+<div><h1 class="font-serif text-xl md:text-2xl font-bold tracking-[0.15em] text-gold leading-tight">AL HAYA</h1><p class="text-[9px] tracking-[0.3em] text-gray-400 uppercase">Attar &amp; Perfumes</p></div>
+</a>
+<div class="flex-1 max-w-xl mx-4 hidden md:block">
+<div class="relative flex items-center">
+<input type="text" placeholder="Search for attar, perfumes, collections…" class="w-full bg-[#120E1A] border border-gold/30 rounded-lg py-2 pl-4 pr-20 text-sm placeholder-gray-500 focus:outline-none focus:border-gold transition">
+<button onclick="triggerVoiceSearch()" class="absolute right-10 text-gray-400 hover:text-gold p-1.5 transition" title="Voice Search"><i class="fa-solid fa-microphone text-xs"></i></button>
+<button class="absolute right-1 bg-gold text-black rounded-md w-8 h-8 flex items-center justify-center hover:bg-gold-glow transition"><i class="fa-solid fa-magnifying-glass text-xs"></i></button>
+</div>
+</div>
+<div class="flex items-center gap-6 text-xs">
+<a href="#" onclick="openModal('Account Login','Sign in to access your luxury rewards and order history.')" class="hidden sm:flex items-center gap-2 hover:text-gold transition"><i class="fa-regular fa-user text-base text-gold"></i><div class="text-left"><p class="text-[10px] text-gray-400 uppercase">Account</p><p class="font-semibold">Login / Register</p></div></a>
+<a href="#" onclick="openWishlist()" class="relative flex items-center gap-2 hover:text-gold transition"><div class="relative"><i class="fa-regular fa-heart text-lg text-gold"></i><span id="wishlist-count" class="absolute -top-2 -right-2 bg-gold text-black font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center">3</span></div><div class="hidden sm:block text-left"><p class="text-[10px] text-gray-400 uppercase">Wishlist</p><p class="font-semibold">Favorites</p></div></a>
+<button onclick="toggleCartDrawer()" class="relative flex items-center gap-2 hover:text-gold transition bg-gold/10 px-3 py-1.5 rounded-lg border border-gold/30"><div class="relative"><i class="fa-solid fa-bag-shopping text-lg text-gold"></i><span id="cart-count" class="absolute -top-2 -right-2 bg-gold text-black font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span></div><div class="text-left"><p class="text-[10px] text-gray-400 uppercase">Cart</p><p class="font-bold text-gold" id="cart-total-header">₹2,499</p></div></button>
+</div>
+</div>
+<div class="border-t border-gold/10 bg-[#0C0912]">
+<div class="max-w-7xl mx-auto px-4 flex items-center justify-between text-xs font-semibold tracking-wider uppercase overflow-x-auto no-bar">
+<button class="bg-gold text-black px-4 py-2.5 flex items-center gap-2 font-bold hover:bg-gold-glow transition shrink-0"><i class="fa-solid fa-bars"></i>All Categories</button>
+<div class="flex items-center gap-6 py-2.5 px-4 shrink-0 text-gray-300">
+<a href="#" class="text-gold font-bold">HOME</a>
+<a href="#top-sellers" class="hover:text-gold transition">SHOP <i class="fa-solid fa-chevron-down text-[9px]"></i></a>
+<a href="#categories" class="hover:text-gold transition">COLLECTIONS</a>
+<a href="#categories" class="hover:text-gold transition">CATEGORIES</a>
+<a href="#top-sellers" class="hover:text-gold transition text-rose-400">BEST SELLERS</a>
+<a href="#top-sellers" class="hover:text-gold transition">NEW ARRIVALS</a>
+<a href="#about" class="hover:text-gold transition">ABOUT US</a>
+<a href="#footer" class="hover:text-gold transition">CONTACT US</a>
+</div>
+</div>
+</div>
+</nav>
 
-            <!-- Search Bar -->
-            <div class="flex-1 max-w-xl mx-4 hidden md:block">
-                <div class="relative flex items-center">
-                    <input type="text" placeholder="Search for attar, perfumes, collections..." class="w-full bg-[#120E1A] border border-gold/30 rounded-lg py-2 pl-4 pr-20 text-sm text-gray-100 placeholder-gray-500 focus:outline-none focus:border-gold transition">
-                    <button class="absolute right-10 text-gray-400 hover:text-gold p-1.5 transition" title="Voice Search" onclick="triggerVoiceSearch()">
-                        <i class="fa-solid fa-microphone text-xs"></i>
-                    </button>
-                    <button class="absolute right-1 bg-gold text-black rounded-md w-8 h-8 flex items-center justify-center hover:bg-gold-glow transition">
-                        <i class="fa-solid fa-magnifying-glass text-xs"></i>
-                    </button>
-                </div>
-            </div>
+<section class="relative hero-bg overflow-hidden py-16 md:py-24 border-b border-gold/20">
+<div id="sparks" class="absolute inset-0 pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-4 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+<p class="text-gold tracking-[0.35em] text-xs font-semibold uppercase">Luxury Fragrances</p>
+<h1 class="font-serif text-4xl md:text-6xl font-bold tracking-wide text-white leading-[1.05]">INSPIRED <span class="text-gray-300 font-normal">BY</span><br><span class="gold-text">TRADITION</span></h1>
+<p class="font-display text-gray-300 text-lg md:text-xl max-w-lg mx-auto lg:mx-0 leading-relaxed italic">Handcrafted with rare botanical extracts and regal royal ouds — the art of fine perfumery, bottled.</p>
+<div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+<a href="#top-sellers" class="btn-gold px-8 py-3.5 rounded-sm text-sm uppercase tracking-widest shadow-lg">Shop Now</a>
+<a href="#categories" class="btn-outline px-8 py-3.5 rounded-sm text-sm uppercase tracking-widest">Discover Collection</a>
+</div>
+</div>
 
-            <!-- Action Badges (Account, Wishlist, Cart) -->
-            <div class="flex items-center space-x-6 text-xs">
-                <a href="#" onclick="openModal('Account Login', 'Sign in to access your luxury rewards and order history.')" class="hidden sm:flex items-center gap-2 hover:text-gold transition">
-                    <i class="fa-regular fa-user text-base text-gold"></i>
-                    <div class="text-left">
-                        <p class="text-[10px] text-gray-400 uppercase">Account</p>
-                        <p class="font-semibold">Login / Register</p>
-                    </div>
-                </a>
+<div class="lg:col-span-6 relative flex justify-center items-center">
+<div class="absolute -left-6 top-6 w-72 h-72 bg-teal-500/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -right-6 bottom-6 w-72 h-72 bg-rose-600/25 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative w-full max-w-md h-[400px] flex items-center justify-center">
+<div class="absolute bottom-2 w-72 h-16 bg-gradient-to-t from-gold/25 via-black/80 to-transparent rounded-[100%] blur-sm border-t border-gold/30"></div>
+<i class="fa-solid fa-gem absolute left-10 bottom-16 text-amber-600/80 text-xl rotate-[-15deg] drop-shadow-lg"></i>
+<i class="fa-solid fa-gem absolute left-20 bottom-8 text-rose-700/70 text-sm rotate-[20deg] drop-shadow-lg"></i>
+<i class="fa-solid fa-gem absolute right-16 bottom-10 text-teal-500/60 text-base rotate-[10deg] drop-shadow-lg"></i>
+<i class="fa-solid fa-rose absolute -bottom-1 -right-1 text-5xl text-rose-800/90 drop-shadow-lg"></i>
 
-                <a href="#" onclick="openWishlist()" class="relative flex items-center gap-2 hover:text-gold transition">
-                    <div class="relative">
-                        <i class="fa-regular fa-heart text-lg text-gold"></i>
-                        <span id="wishlist-count" class="absolute -top-2 -right-2 bg-gold text-black font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center">3</span>
-                    </div>
-                    <div class="hidden sm:block text-left">
-                        <p class="text-[10px] text-gray-400 uppercase">Wishlist</p>
-                        <p class="font-semibold">Favorites</p>
-                    </div>
-                </a>
+<div class="relative z-10 floaty filter drop-shadow-[0_25px_35px_rgba(0,0,0,.85)]">
+<svg class="w-64 h-96" viewBox="0 0 300 420" xmlns="http://www.w3.org/2000/svg">
+<polygon points="150,10 172,40 195,55 172,70 150,100 128,70 105,55 128,40" fill="url(#capGrad)" stroke="#FFE57F" stroke-width="1.2"/>
+<polygon points="150,10 172,40 150,55 128,40" fill="#FFF" fill-opacity=".3"/>
+<rect x="140" y="100" width="20" height="18" fill="url(#metal)" rx="2"/>
+<path d="M88 128 C88 116 212 116 212 128 L228 335 C228 358 72 358 72 335 Z" fill="url(#glass)" stroke="#D4AF37" stroke-width="2"/>
+<path d="M96 132 L104 330" stroke="#fff" stroke-opacity=".15" stroke-width="4"/>
+<path d="M82 195 C120 183 180 205 218 193 L223 333 C223 350 77 350 77 333 Z" fill="url(#amber)" fill-opacity=".9"/>
+<rect x="108" y="195" width="84" height="92" rx="4" fill="#0A080E" stroke="#D4AF37" stroke-width="1.3"/>
+<path d="M150 210 L158 223 L142 223 Z" fill="#D4AF37"/>
+<text x="150" y="241" text-anchor="middle" fill="#D4AF37" font-family="Cinzel" font-size="11" font-weight="700">AL HAYA</text>
+<text x="150" y="254" text-anchor="middle" fill="#E8C766" font-size="5.5" letter-spacing="1.5">ATTAR &amp; PERFUMES</text>
+<defs>
+<linearGradient id="capGrad" x1="105" y1="10" x2="195" y2="100" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF3C4"/><stop offset=".5" stop-color="#D4AF37"/><stop offset="1" stop-color="#5C420C"/></linearGradient>
+<linearGradient id="metal" x1="140" y1="100" x2="160" y2="118" gradientUnits="userSpaceOnUse"><stop stop-color="#F3E5AB"/><stop offset=".5" stop-color="#9C7519"/><stop offset="1" stop-color="#FFE57F"/></linearGradient>
+<linearGradient id="glass" x1="72" y1="116" x2="228" y2="358" gradientUnits="userSpaceOnUse"><stop stop-color="#241C30" stop-opacity=".92"/><stop offset=".5" stop-color="#0A080E" stop-opacity=".96"/><stop offset="1" stop-color="#1B1428" stop-opacity=".92"/></linearGradient>
+<linearGradient id="amber" x1="82" y1="195" x2="223" y2="350" gradientUnits="userSpaceOnUse"><stop stop-color="#E8C766"/><stop offset=".5" stop-color="#9A6A2E"/><stop offset="1" stop-color="#4A150B"/></linearGradient>
+</defs>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center gap-2 mt-8"><span class="w-2.5 h-2.5 rounded-full bg-gold"></span><span class="w-2.5 h-2.5 rounded-full bg-gray-600 hover:bg-gold/50 cursor-pointer"></span><span class="w-2.5 h-2.5 rounded-full bg-gray-600 hover:bg-gold/50 cursor-pointer"></span></div>
+</section>
 
-                <button onclick="toggleCartDrawer()" class="relative flex items-center gap-2 hover:text-gold transition bg-gold/10 px-3 py-1.5 rounded-lg border border-gold/30">
-                    <div class="relative">
-                        <i class="fa-solid fa-bag-shopping text-lg text-gold"></i>
-                        <span id="cart-count" class="absolute -top-2 -right-2 bg-gold text-black font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
-                    </div>
-                    <div class="text-left">
-                        <p class="text-[10px] text-gray-400 uppercase">Cart</p>
-                        <p class="font-bold text-gold" id="cart-total-header">₹2,499</p>
-                    </div>
-                </button>
-            </div>
-        </div>
+<section class="py-8 bg-[#09070D] border-b border-gold/10 px-4">
+<div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3" id="features"></div>
+</section>
 
-        <!-- Navigation Categories Strip -->
-        <div class="border-t border-gold/10 bg-[#0C0912]">
-            <div class="max-w-7xl mx-auto px-4 flex items-center justify-between text-xs font-semibold tracking-wider uppercase overflow-x-auto no-scrollbar">
-                <button class="bg-gold text-black px-4 py-2.5 flex items-center gap-2 font-bold hover:bg-gold-glow transition shrink-0">
-                    <i class="fa-solid fa-bars"></i> ALL CATEGORIES
-                </button>
-                <div class="flex items-center space-x-6 py-2.5 px-4 shrink-0 text-gray-300">
-                    <a href="#" class="text-gold font-bold">HOME</a>
-                    <a href="#top-sellers" class="hover:text-gold transition">SHOP <i class="fa-solid fa-chevron-down text-[9px]"></i></a>
-                    <a href="#categories" class="hover:text-gold transition">COLLECTIONS <i class="fa-solid fa-chevron-down text-[9px]"></i></a>
-                    <a href="#categories" class="hover:text-gold transition">CATEGORIES <i class="fa-solid fa-chevron-down text-[9px]"></i></a>
-                    <a href="#top-sellers" class="hover:text-gold transition text-red-400">BEST SELLERS</a>
-                    <a href="#top-sellers" class="hover:text-gold transition">NEW ARRIVALS</a>
-                    <a href="#about" class="hover:text-gold transition">ABOUT US</a>
-                    <a href="#footer" class="hover:text-gold transition">CONTACT US</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+<section id="categories" class="py-14 px-4 max-w-7xl mx-auto w-full">
+<div class="text-center mb-10"><div class="rule mb-2"><span class="text-gold text-xs font-serif uppercase tracking-[0.3em]">Explore Collection</span></div><h2 class="font-serif text-2xl md:text-3xl font-bold text-white tracking-widest uppercase">Shop By Category</h2></div>
+<div class="relative"><div class="flex gap-4 overflow-x-auto no-bar pb-4" id="cat-container"></div>
+<button onclick="document.getElementById('cat-container').scrollBy({left:220,behavior:'smooth'})" class="absolute -right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-gold text-black flex items-center justify-center shadow-lg hover:bg-gold-glow transition"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+</div>
+</section>
 
-    <!-- HERO SECTION -->
-    <section class="relative hero-bg overflow-hidden py-16 md:py-24 border-b border-gold/20">
-        <!-- Ambient Decorative Particles -->
-        <div class="absolute inset-0 pointer-events-none opacity-40">
-            <div class="absolute top-1/4 left-1/3 w-2 h-2 bg-gold rounded-full blur-xs animate-ping"></div>
-            <div class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-gold/50 rounded-full blur-xs animate-pulse"></div>
-            <div class="absolute top-1/2 right-10 w-2 h-2 bg-cyan-400/50 rounded-full blur-xs"></div>
-        </div>
+<section class="py-6 px-4 max-w-7xl mx-auto w-full">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="relative glass rounded-xl p-6 overflow-hidden border border-purple-500/30 flex flex-col justify-between min-h-[220px]">
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-purple-600/20 rounded-full blur-2xl"></div>
+<div class="relative z-10 space-y-2"><span class="text-red-400 font-semibold text-[10px] tracking-widest uppercase border border-red-500/30 px-2 py-0.5 rounded-sm bg-red-950/40">Limited Edition</span><h3 class="font-serif text-lg font-bold text-white">Exclusive Collection</h3><p class="text-xs text-gray-400">Crafted for connoisseurs of pure oriental fragrance.</p></div>
+<button onclick="openModal('Exclusive Collection','Browsing Limited Batch #109 vault products.')" class="relative z-10 mt-4 btn-outline px-4 py-2 text-xs uppercase tracking-wider rounded-sm w-fit">Explore Now</button>
+</div>
+<div class="relative glass rounded-xl p-6 overflow-hidden border border-teal-500/30 flex flex-col justify-between min-h-[220px]">
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-teal-600/20 rounded-full blur-2xl"></div>
+<div class="relative z-10 space-y-2"><span class="text-teal-400 font-semibold text-[10px] tracking-widest uppercase border border-teal-500/30 px-2 py-0.5 rounded-sm bg-teal-950/40">Discover Your</span><h3 class="font-serif text-lg font-bold text-white">Signature Scent</h3><p class="text-xs text-gray-400">Take our fragrance quiz, find your match in 2 minutes.</p></div>
+<button onclick="startQuiz()" class="relative z-10 mt-4 btn-gold px-4 py-2 text-xs uppercase tracking-wider rounded-sm w-fit">Take Quiz</button>
+</div>
+<div class="relative glass rounded-xl p-6 overflow-hidden border border-amber-500/30 flex flex-col justify-between min-h-[220px]">
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-amber-600/20 rounded-full blur-2xl"></div>
+<div class="relative z-10 space-y-2"><span class="text-gold font-semibold text-[10px] tracking-widest uppercase border border-gold/30 px-2 py-0.5 rounded-sm bg-amber-950/40">Gift Sets</span><h3 class="font-serif text-lg font-bold text-white">For Every Occasion</h3><p class="text-xs text-gray-400">Elegant box sets for weddings and celebrations.</p></div>
+<button onclick="openModal('Gift Sets Collection','Custom hamper options and royal gift boxes.')" class="relative z-10 mt-4 btn-outline px-4 py-2 text-xs uppercase tracking-wider rounded-sm w-fit">Shop Gift Sets</button>
+</div>
+</div>
+</section>
 
-        <div class="max-w-7xl mx-auto px-4 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <!-- Left Hero Content -->
-            <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
-                <p class="text-gold tracking-[0.3em] text-xs md:text-sm font-semibold uppercase">Luxury Fragrances</p>
-                <h1 class="font-serif text-4xl md:text-6xl font-extrabold tracking-wide text-white leading-tight">
-                    INSPIRED <span class="text-gray-300 font-normal">BY</span><br>
-                    <span class="gold-gradient-text">TRADITION</span>
-                </h1>
-                <p class="text-gray-300 text-sm md:text-base max-w-lg mx-auto lg:mx-0 font-light leading-relaxed">
-                    Experience the art of fine perfumery with AL HAYA Attar and Perfumes. Handcrafted with rare botanical extracts and regal royal ouds.
-                </p>
-                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-                    <a href="#top-sellers" class="gold-button px-8 py-3.5 rounded-sm text-sm uppercase tracking-widest shadow-lg">SHOP NOW</a>
-                    <a href="#categories" class="gold-outline-btn px-8 py-3.5 rounded-sm text-sm uppercase tracking-widest">DISCOVER COLLECTION</a>
-                </div>
-            </div>
+<section id="top-sellers" class="py-14 px-4 max-w-7xl mx-auto w-full">
+<div class="text-center mb-8"><div class="rule mb-2"><span class="text-gold text-xs font-serif uppercase tracking-[0.3em]">Curated Selection</span></div><h2 class="font-serif text-2xl md:text-3xl font-bold text-white tracking-widest uppercase">Top Selling Products</h2></div>
+<div class="flex flex-wrap justify-between items-center border-b border-gold/20 pb-3 mb-8 gap-4">
+<div class="flex gap-4 text-xs font-bold uppercase tracking-wider"><button class="text-gold border-b-2 border-gold pb-1.5">Best Seller</button><button class="text-gray-400 hover:text-gold pb-1.5 transition">New Arrivals</button><button class="text-gray-400 hover:text-gold pb-1.5 transition">Limited Edition</button></div>
+<a href="#" class="text-gold hover:text-white text-xs font-bold uppercase tracking-wider flex items-center gap-1">View All <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5" id="product-grid"></div>
+</section>
 
-            <!-- Right 3D Visual Bottle & Ambient Art -->
-            <div class="lg:col-span-6 relative flex justify-center items-center">
-                <!-- Cyan Ambient Glow Left -->
-                <div class="absolute -left-10 top-10 w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
-                <!-- Magenta Glow Right -->
-                <div class="absolute -right-10 bottom-10 w-72 h-72 bg-pink-600/25 rounded-full blur-3xl pointer-events-none"></div>
+<section class="py-12 bg-[#08060B] border-t border-gold/10">
+<div class="max-w-7xl mx-auto px-4">
+<div class="text-center mb-8"><div class="rule mb-2"><span class="text-gold text-xs font-serif uppercase tracking-[0.3em]">Social Gallery</span></div><h2 class="font-serif text-2xl font-bold text-white tracking-widest uppercase">Follow Us On Instagram</h2></div>
+<div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3" id="insta-grid"></div>
+</div>
+</section>
 
-                <!-- Central Bottle Showcase Frame -->
-                <div class="relative w-full max-w-md h-[380px] md:h-[420px] flex items-center justify-center">
-                    <!-- Pedestal Reflective Base -->
-                    <div class="absolute bottom-2 w-72 h-16 bg-gradient-to-t from-gold/20 via-black/80 to-transparent rounded-[100%] blur-sm border-t border-gold/30"></div>
+<section class="py-8 bg-[#0D0A14] border-t border-b border-gold/20 px-4">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+<div class="lg:col-span-6 flex flex-col sm:flex-row items-center gap-4">
+<div class="w-12 h-12 rounded-full border border-gold/40 bg-gold/10 flex items-center justify-center shrink-0"><i class="fa-regular fa-envelope text-gold text-xl"></i></div>
+<div><h4 class="font-serif font-bold text-white text-sm">Join Our Fragrance Family</h4><p class="text-xs text-gray-400">Exclusive offers, new arrivals and special discounts.</p></div>
+<div class="flex w-full sm:w-auto mt-2 sm:mt-0"><input type="email" id="newsletter-email" placeholder="Enter your email address" class="bg-[#181224] border border-gold/30 rounded-l-md px-3 py-2 text-xs text-white focus:outline-none focus:border-gold w-full sm:w-48"><button onclick="subscribeNewsletter()" class="btn-gold px-4 py-2 text-xs font-bold uppercase rounded-r-md shrink-0">Subscribe</button></div>
+</div>
+<div class="lg:col-span-6 grid grid-cols-3 gap-2 text-center text-xs border-t lg:border-t-0 lg:border-l border-gold/10 pt-4 lg:pt-0 lg:pl-6">
+<div class="flex flex-col items-center gap-1"><i class="fa-solid fa-truck text-gold"></i><p class="font-bold text-gray-200 text-[11px]">FREE SHIPPING</p><p class="text-[10px] text-gray-400">Above ₹999</p></div>
+<div class="flex flex-col items-center gap-1"><i class="fa-solid fa-rotate text-gold"></i><p class="font-bold text-gray-200 text-[11px]">EASY RETURNS</p><p class="text-[10px] text-gray-400">Within 7 Days</p></div>
+<div class="flex flex-col items-center gap-1"><i class="fa-solid fa-shield text-gold"></i><p class="font-bold text-gray-200 text-[11px]">SECURE PAYMENTS</p><p class="text-[10px] text-gray-400">100% Protected</p></div>
+</div>
+</div>
+</section>
 
-                    <!-- SVG 3D Royal Bottle Rendering -->
-                    <div class="relative z-10 filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.9)] transform hover:scale-105 transition duration-500">
-                        <svg class="w-64 h-80 md:w-72 md:h-96" viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Geometric Diamond Cap -->
-                            <polygon points="150,20 185,55 150,90 115,55" fill="url(#capGrad)" stroke="#FFE57F" stroke-width="1.5"/>
-                            <polygon points="150,20 185,55 150,55" fill="#FFF" fill-opacity="0.25"/>
-                            <rect x="142" y="90" width="16" height="20" fill="url(#goldMetal)"/>
-                            <!-- Bottle Body -->
-                            <path d="M90 120 C90 110 210 110 210 120 L225 320 C225 340 75 340 75 320 Z" fill="url(#bottleGlass)" stroke="#D4AF37" stroke-width="2"/>
-                            <path d="M95 125 L105 315" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="3"/>
-                            <!-- Liquid Level -->
-                            <path d="M85 180 C120 170 180 190 215 180 L220 315 C220 330 80 330 80 315 Z" fill="url(#perfumeAmber)" fill-opacity="0.85"/>
-                            <!-- Emblem Label -->
-                            <rect x="110" y="180" width="80" height="90" rx="4" fill="#0A080E" stroke="#D4AF37" stroke-width="1.5"/>
-                            <!-- Crest on Emblem -->
-                            <path d="M150 195 L157 207 L143 207 Z" fill="#D4AF37"/>
-                            <text x="150" y="225" text-anchor="middle" fill="#D4AF37" font-family="Cinzel" font-size="10" font-weight="bold">AL HAYA</text>
-                            <text x="150" y="238" text-anchor="middle" fill="#E6C258" font-family="sans-serif" font-size="5" letter-spacing="1">ATTAR & PERFUMES</text>
-                            <!-- Gradients -->
-                            <defs>
-                                <linearGradient id="capGrad" x1="115" y1="20" x2="185" y2="90" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#FFE57F"/>
-                                    <stop offset="0.5" stop-color="#D4AF37"/>
-                                    <stop offset="1" stop-color="#543D0A"/>
-                                </linearGradient>
-                                <linearGradient id="goldMetal" x1="142" y1="90" x2="158" y2="110" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#F3E5AB"/>
-                                    <stop offset="0.5" stop-color="#AA7C11"/>
-                                    <stop offset="1" stop-color="#FFE57F"/>
-                                </linearGradient>
-                                <linearGradient id="bottleGlass" x1="75" y1="110" x2="225" y2="340" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#1F1929" stop-opacity="0.9"/>
-                                    <stop offset="0.5" stop-color="#0A080E" stop-opacity="0.95"/>
-                                    <stop offset="1" stop-color="#181024" stop-opacity="0.9"/>
-                                </linearGradient>
-                                <linearGradient id="perfumeAmber" x1="80" y1="180" x2="220" y2="330" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#D4AF37"/>
-                                    <stop offset="0.5" stop-color="#8B5A2B"/>
-                                    <stop offset="1" stop-color="#4A150B"/>
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
+<footer id="footer" class="bg-ink pt-12 pb-6 px-4 text-xs text-gray-400 border-t border-gold/10">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 pb-10 border-b border-gray-800">
+<div class="lg:col-span-2 space-y-4">
+<div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center bg-gold/10"><i class="fa-solid fa-crown text-gold"></i></div><div><h3 class="font-serif text-lg font-bold text-gold tracking-widest">AL HAYA</h3><p class="text-[8px] tracking-[0.2em] text-gray-400 uppercase">Attar &amp; Perfumes</p></div></div>
+<p class="leading-relaxed">Luxury fragrances inspired by tradition. Crafted with passion, delivered with love — artisanal ouds, rose extracts, and royal attars.</p>
+</div>
+<div class="space-y-3"><h4 class="font-serif text-gold font-bold uppercase tracking-wider text-xs">Quick Links</h4><ul class="space-y-2"><li><a href="#" class="hover:text-gold transition">About Us</a></li><li><a href="#" class="hover:text-gold transition">Contact Us</a></li><li><a href="#" class="hover:text-gold transition">Track Order</a></li><li><a href="#" class="hover:text-gold transition">FAQ</a></li><li><a href="#" class="hover:text-gold transition">Perfume Guide</a></li></ul></div>
+<div class="space-y-3"><h4 class="font-serif text-gold font-bold uppercase tracking-wider text-xs">Customer Service</h4><ul class="space-y-2"><li><a href="#" class="hover:text-gold transition">Shipping Policy</a></li><li><a href="#" class="hover:text-gold transition">Return &amp; Refund</a></li><li><a href="#" class="hover:text-gold transition">Terms &amp; Conditions</a></li><li><a href="#" class="hover:text-gold transition">Privacy Policy</a></li><li><a href="#" class="hover:text-gold transition">Cancellation Policy</a></li></ul></div>
+<div class="space-y-3"><h4 class="font-serif text-gold font-bold uppercase tracking-wider text-xs">My Account</h4><ul class="space-y-2"><li><a href="#" class="hover:text-gold transition">My Account</a></li><li><a href="#" class="hover:text-gold transition">Orders</a></li><li><a href="#" class="hover:text-gold transition">Wishlist</a></li><li><a href="#" class="hover:text-gold transition">Addresses</a></li><li><a href="#" class="hover:text-gold transition">Payment Methods</a></li></ul></div>
+<div class="space-y-3"><h4 class="font-serif text-gold font-bold uppercase tracking-wider text-xs">Contact Us</h4><ul class="space-y-2.5"><li class="flex items-center gap-2"><i class="fa-solid fa-phone text-gold text-xs"></i>+91 98745 43210</li><li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-gold text-xs"></i>info@alhayaattar.com</li><li class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-gold text-xs mt-0.5"></i>Mumbai &amp; Dubai Flagship Boutiques</li></ul></div>
+</div>
+<div class="max-w-7xl mx-auto pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-[11px] text-gray-500">© 2026 AL HAYA ATTAR AND PERFUMES. ALL RIGHTS RESERVED.</p>
+<div class="flex items-center gap-3 text-lg text-gray-300"><i class="fa-brands fa-cc-visa hover:text-gold transition"></i><i class="fa-brands fa-cc-mastercard hover:text-gold transition"></i><i class="fa-solid fa-credit-card hover:text-gold transition" title="RuPay / UPI"></i><i class="fa-brands fa-google-pay hover:text-gold transition"></i><i class="fa-brands fa-apple-pay hover:text-gold transition"></i></div>
+</div>
+</footer>
 
-                    <!-- Ambient Rose & Lantern Details (Decorative Canvas Elements) -->
-                    <div class="absolute -bottom-2 -right-2 w-24 h-24 text-red-700/80 filter drop-shadow-lg opacity-80 pointer-events-none">
-                        <i class="fa-solid fa-rose text-6xl text-rose-800"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
+<a href="https://wa.me/919874543210" target="_blank" class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300" title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
 
-        <!-- Hero Slider Arrows & Pagination -->
-        <button class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-gold/30 bg-black/50 text-gold flex items-center justify-center hover:bg-gold hover:text-black transition">
-            <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-gold/30 bg-black/50 text-gold flex items-center justify-center hover:bg-gold hover:text-black transition">
-            <i class="fa-solid fa-chevron-right"></i>
-        </button>
-        <div class="flex justify-center space-x-2 mt-8">
-            <span class="w-2.5 h-2.5 rounded-full bg-gold"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-gray-600 hover:bg-gold/50 cursor-pointer"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-gray-600 hover:bg-gold/50 cursor-pointer"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-gray-600 hover:bg-gold/50 cursor-pointer"></span>
-        </div>
-    </section>
+<div id="cart-drawer" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0">
+<div onclick="toggleCartDrawer()" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+<div id="cart-panel" class="absolute top-0 right-0 h-full w-full max-w-md bg-[#0D0A14] border-l border-gold/30 p-6 flex flex-col justify-between transform translate-x-full transition duration-300 pointer-events-auto">
+<div><div class="flex justify-between items-center border-b border-gold/20 pb-4"><h3 class="font-serif font-bold text-lg text-gold flex items-center gap-2"><i class="fa-solid fa-bag-shopping"></i>Your Shopping Bag</h3><button onclick="toggleCartDrawer()" class="text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button></div>
+<div id="cart-items" class="py-4 space-y-4 max-h-[60vh] overflow-y-auto"></div></div>
+<div class="border-t border-gold/20 pt-4 space-y-3"><div class="flex justify-between text-sm font-bold"><span class="text-gray-300">Subtotal:</span><span id="cart-subtotal" class="text-gold">₹2,499</span></div><p class="text-[10px] text-gray-500">Taxes and shipping calculated at checkout.</p><button onclick="checkout()" class="w-full btn-gold py-3 text-xs uppercase tracking-widest rounded-sm font-bold">Proceed To Checkout</button></div>
+</div>
+</div>
 
-    <!-- GLASSMORPHISM FEATURE ICONS STRIP -->
-    <section class="py-8 bg-[#09070D] border-b border-gold/10 px-4">
-        <div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
-            <div class="glass-card rounded-xl p-3 text-center flex flex-col items-center justify-center gap-2 group transition">
-                <i class="fa-solid fa-shield-halved text-gold text-xl group-hover:scale-110 transition"></i>
-                <p class="text-[10px] font-bold text-gray-200 tracking-wider">100% ORIGINAL<br><span class="text-gray-400 font-normal">FRAGRANCE</span></p>
-            </div>
-            <div class="glass-card rounded-xl p-3 text-center flex flex-col items-center justify-center gap-2 group transition">
-                <i class="fa-solid fa-droplet text-gold text-xl group-hover:scale-110 transition"></i>
-                <p class="text-[10px] font-bold text-gray-200 tracking-wider">PREMIUM QUALITY<br><span class="text-gray-400 font-normal">OILS</span></p>
-            </div>
-            <div class="glass-card rounded-xl p-3 text-center flex flex-col items-center justify-center gap-2 group transition">
-                <i class="fa-solid fa-clock-rotate-left text-gold text-xl group-hover:scale-110 transition"></i>
-                <p class="text-[10px] font-bold text-gray-200 tracking-wider">LONG<br><span class="text-gray-400 font-normal">LASTING</span></p>
-            </div>
-            <div class="glass-card rounded-xl p-3 text-center flex flex-col items-center justify-center gap-2 group transition">
-                <i class="fa-solid fa-gift text-gold text-xl group-hover:scale-110 transition"></i>
-                <p class="text-[10px] font-bold text-gray-200 tracking-wider">LUXURY<br><span class="text-gray-400 font-normal">PACKAGING</span></p>
-            </div>
-            <div class="glass-card rounded-xl p-3 text-center flex flex-col items-center justify-center gap-2 group transition">
-                <i class="fa-solid fa-truck-ramp-box text-gold text-xl group-hover:scale-110 transition"></i>
-                <p class="text-[10px] font-bold text-gray-200 tracking-wider">FAST & SAFE<br><span class="text-gray-400 font-normal">DELIVERY</span></p>
-            </div>
-            <div class="glass-card rounded-xl p-3 text-center flex flex-col items-center justify-center gap-2 group transition">
-                <i class="fa-solid fa-rotate-left text-gold text-xl group-hover:scale-110 transition"></i>
-                <p class="text-[10px] font-bold text-gray-200 tracking-wider">EASY<br><span class="text-gray-400 font-normal">RETURNS</span></p>
-            </div>
-            <div class="glass-card rounded-xl p-3 text-center flex flex-col items-center justify-center gap-2 group transition">
-                <i class="fa-solid fa-lock text-gold text-xl group-hover:scale-110 transition"></i>
-                <p class="text-[10px] font-bold text-gray-200 tracking-wider">SECURE<br><span class="text-gray-400 font-normal">PAYMENTS</span></p>
-            </div>
-            <div class="glass-card rounded-xl p-3 text-center flex flex-col items-center justify-center gap-2 group transition">
-                <i class="fa-solid fa-money-bill-wave text-gold text-xl group-hover:scale-110 transition"></i>
-                <p class="text-[10px] font-bold text-gray-200 tracking-wider">CASH ON<br><span class="text-gray-400 font-normal">DELIVERY</span></p>
-            </div>
-        </div>
-    </section>
+<div id="app-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+<div class="glass rounded-xl max-w-md w-full p-6 border border-gold/40 relative">
+<button onclick="closeModal()" class="absolute top-3 right-3 text-gray-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+<h3 id="modal-title" class="font-serif font-bold text-gold text-lg mb-2">Notice</h3>
+<p id="modal-body" class="text-xs text-gray-300 mb-4">Modal content goes here…</p>
+<button onclick="closeModal()" class="w-full btn-gold py-2 text-xs uppercase font-bold rounded-sm">Close</button>
+</div>
+</div>
 
-    <!-- SHOP BY CATEGORY SECTION -->
-    <section id="categories" class="py-14 px-4 max-w-7xl mx-auto">
-        <div class="text-center mb-10">
-            <div class="filigree-line mb-2">
-                <span class="text-gold text-xs font-serif uppercase tracking-[0.3em]">Explore Collection</span>
-            </div>
-            <h2 class="font-serif text-2xl md:text-3xl font-bold text-white tracking-widest uppercase">SHOP BY CATEGORY</h2>
-        </div>
+<script>
+const FEATURES=[['shield-halved','100% ORIGINAL','FRAGRANCE'],['droplet','PREMIUM QUALITY','OILS'],['clock-rotate-left','LONG','LASTING'],['gift','LUXURY','PACKAGING'],['truck-ramp-box','FAST & SAFE','DELIVERY'],['rotate-left','EASY','RETURNS'],['lock','SECURE','PAYMENTS'],['money-bill-wave','CASH ON','DELIVERY']];
+document.getElementById('features').innerHTML=FEATURES.map(f=>`<div class="glass rounded-xl p-3 text-center flex flex-col items-center justify-center gap-2 group transition"><i class="fa-solid fa-${f[0]} text-gold text-xl group-hover:scale-110 transition"></i><p class="text-[10px] font-bold text-gray-200 tracking-wider">${f[1]}<br><span class="text-gray-400 font-normal">${f[2]}</span></p></div>`).join('');
 
-        <!-- Categories Carousel Grid -->
-        <div class="relative">
-            <div class="flex space-x-4 overflow-x-auto no-scrollbar pb-4 scroll-smooth" id="category-container">
-                <!-- 10 Category Cards -->
-                <script>
-                    const categories = [
-                        { title: 'ATTAR', imgBg: 'from-amber-950 to-black', icon: 'fa-vial' },
-                        { title: 'OUD', imgBg: 'from-yellow-950 to-black', icon: 'fa-gem' },
-                        { title: 'ARABIC PERFUMES', imgBg: 'from-blue-950 to-black', icon: 'fa-mosque' },
-                        { title: 'MUSK', imgBg: 'from-purple-950 to-black', icon: 'fa-feather' },
-                        { title: 'ROSE', imgBg: 'from-rose-950 to-black', icon: 'fa-spa' },
-                        { title: 'FLORAL', imgBg: 'from-fuchsia-950 to-black', icon: 'fa-seedling' },
-                        { title: 'WOODY', imgBg: 'from-orange-950 to-black', icon: 'fa-tree' },
-                        { title: 'FRESH', imgBg: 'from-teal-950 to-black', icon: 'fa-wind' },
-                        { title: 'LUXURY COLLECTION', imgBg: 'from-amber-900 to-black', icon: 'fa-crown' },
-                        { title: 'GIFT SETS', imgBg: 'from-indigo-950 to-black', icon: 'fa-box-open' }
-                    ];
+const CATS=[['ATTAR','vial','from-amber-950'],['OUD','gem','from-yellow-950'],['ARABIC PERFUMES','mosque','from-blue-950'],['MUSK','feather','from-purple-950'],['ROSE','spa','from-rose-950'],['FLORAL','seedling','from-fuchsia-950'],['WOODY','tree','from-orange-950'],['FRESH','wind','from-teal-950'],['LUXURY COLLECTION','crown','from-amber-900'],['GIFT SETS','box-open','from-indigo-950']];
+document.getElementById('cat-container').innerHTML=CATS.map(c=>`<div class="min-w-[140px] md:min-w-[160px] glass rounded-lg p-4 text-center flex flex-col items-center justify-between group cursor-pointer hover:-translate-y-1 transition duration-300"><div class="w-20 h-24 rounded-md bg-gradient-to-b ${c[2]} to-black border border-gold/25 flex items-center justify-center mb-3 shadow-inner group-hover:border-gold transition"><i class="fa-solid fa-${c[1]} text-3xl text-gold group-hover:scale-125 transition duration-300"></i></div><h3 class="font-serif text-xs font-bold text-gray-200 group-hover:text-gold tracking-wider">${c[0]}</h3></div>`).join('');
 
-                    categories.forEach(cat => {
-                        document.write(`
-                            <div class="min-w-[140px] md:min-w-[160px] glass-card rounded-lg p-4 text-center flex flex-col items-center justify-between group cursor-pointer hover:-translate-y-1 transition duration-300 border border-gold/20">
-                                <div class="w-20 h-24 rounded-md bg-gradient-to-b ${cat.imgBg} border border-gold/30 flex items-center justify-center mb-3 shadow-inner group-hover:border-gold transition">
-                                    <i class="fa-solid ${cat.icon} text-3xl text-gold group-hover:scale-125 transition duration-300"></i>
-                                </div>
-                                <h3 class="font-serif text-xs font-bold text-gray-200 group-hover:text-gold tracking-wider">${cat.title}</h3>
-                            </div>
-                        `);
-                    });
-                </script>
-            </div>
-            <!-- Scroll Button -->
-            <button onclick="document.getElementById('category-container').scrollBy({left: 200, behavior: 'smooth'})" class="absolute -right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-gold text-black flex items-center justify-center shadow-lg hover:bg-gold-glow transition">
-                <i class="fa-solid fa-chevron-right text-xs"></i>
-            </button>
-        </div>
-    </section>
+const PRODUCTS=[
+{n:'OUD AL HAYA',icon:'bottle-droplet',glow:'rgba(212,175,55,.45)',color:'text-gold',badge:'BEST SELLER',badgeCls:'bg-gold/90 text-black',price:1299,range:'₹1,299 – ₹4,999',stars:5,rev:120},
+{n:'MUSK AL TAHARA',icon:'bottle-water',glow:'rgba(255,255,255,.35)',color:'text-gray-100',badge:'NEW',badgeCls:'bg-teal-500/90 text-black',price:999,range:'₹999 – ₹3,999',stars:5,rev:98},
+{n:'ROSE AL HAYA',icon:'whiskey-glass',glow:'rgba(244,63,94,.4)',color:'text-rose-500',badge:'LIMITED',badgeCls:'bg-red-600/90 text-white',price:1199,range:'₹1,199 – ₹4,299',stars:5,rev:76},
+{n:'AMBER OUD',icon:'flask',glow:'rgba(245,158,11,.4)',color:'text-amber-500',badge:'BEST SELLER',badgeCls:'bg-gold/90 text-black',price:1499,range:'₹1,499 – ₹5,499',stars:4,rev:110},
+{n:'SANDAL MUSK',icon:'wine-bottle',glow:'rgba(251,146,60,.4)',color:'text-orange-400',badge:'NEW',badgeCls:'bg-teal-500/90 text-black',price:999,range:'₹999 – ₹3,499',stars:5,rev:67}
+];
+document.getElementById('product-grid').innerHTML=PRODUCTS.map(p=>`
+<div class="glass rounded-lg p-4 flex flex-col justify-between group relative">
+<span class="absolute top-3 left-3 ${p.badgeCls} text-[9px] font-bold px-2 py-0.5 rounded uppercase">${p.badge}</span>
+<button onclick="toggleWishlist(this)" class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-sm"><i class="fa-regular fa-heart"></i></button>
+<div class="my-4 h-44 flex items-center justify-center rounded-md p-2 group-hover:scale-105 transition duration-300" style="background:radial-gradient(circle,${p.glow} 0%,rgba(0,0,0,.55) 70%)"><i class="fa-solid fa-${p.icon} text-6xl ${p.color} filter drop-shadow-[0_0_15px_${p.glow}]"></i></div>
+<div><h3 class="font-serif font-bold text-sm text-white group-hover:text-gold transition">${p.n}</h3><p class="text-[11px] text-gray-400 mb-1">Extrait De Parfum</p>
+<div class="flex items-center text-amber-400 text-[10px] gap-1 mb-2">${'<i class="fa-solid fa-star"></i>'.repeat(p.stars)}${'<i class="fa-regular fa-star"></i>'.repeat(5-p.stars)}<span class="text-gray-400 ml-1">(${p.rev})</span></div>
+<p class="font-bold text-gold text-sm mb-3">${p.range}</p>
+<button onclick="addToCart('${p.n}',${p.price})" class="w-full btn-gold py-2 text-xs uppercase tracking-wider rounded-sm">Add To Cart</button></div>
+</div>`).join('');
 
-    <!-- PROMOTIONAL BANNERS (3 COLUMNS) -->
-    <section class="py-6 px-4 max-w-7xl mx-auto w-full">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Banner 1: Limited Edition -->
-            <div class="relative glass-card rounded-xl p-6 overflow-hidden border border-purple-500/30 flex flex-col justify-between min-h-[220px]">
-                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-purple-600/20 rounded-full blur-2xl"></div>
-                <div class="relative z-10 space-y-2">
-                    <span class="text-red-400 font-semibold text-[10px] tracking-widest uppercase border border-red-500/30 px-2 py-0.5 rounded-sm bg-red-950/40">LIMITED EDITION</span>
-                    <h3 class="font-serif text-lg font-bold text-white leading-snug">EXCLUSIVE COLLECTION</h3>
-                    <p class="text-xs text-gray-400 font-light">Crafted for the Connoisseurs of pure oriental fragrances.</p>
-                </div>
-                <div class="relative z-10 pt-4">
-                    <button onclick="openModal('Exclusive Collection', 'Browsing Limited Batch #109 Vault Products.')" class="gold-outline-btn px-4 py-2 text-xs uppercase tracking-wider rounded-sm">EXPLORE NOW</button>
-                </div>
-            </div>
+let ig='';for(let i=0;i<7;i++){ig+=`<div class="relative h-32 rounded-lg bg-gradient-to-tr from-amber-950 via-purple-950 to-black border border-gold/20 flex items-center justify-center overflow-hidden group cursor-pointer"><i class="fa-solid fa-spray-can text-3xl text-gold/40 group-hover:scale-125 transition duration-300"></i><div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition"><i class="fa-brands fa-instagram text-gold text-2xl"></i></div></div>`}
+ig+=`<div class="h-32 rounded-lg glass p-3 text-center flex flex-col items-center justify-center gap-2"><i class="fa-brands fa-instagram text-2xl text-gold"></i><p class="text-[10px] font-bold text-gray-200">@alhaya.perfumes</p><a href="https://instagram.com" target="_blank" class="btn-gold px-3 py-1 text-[9px] uppercase tracking-wider rounded-sm">Follow Us</a></div>`;
+document.getElementById('insta-grid').innerHTML=ig;
 
-            <!-- Banner 2: Signature Scent Quiz -->
-            <div class="relative glass-card rounded-xl p-6 overflow-hidden border border-teal-500/30 flex flex-col justify-between min-h-[220px]">
-                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-teal-600/20 rounded-full blur-2xl"></div>
-                <div class="relative z-10 space-y-2">
-                    <span class="text-teal-400 font-semibold text-[10px] tracking-widest uppercase border border-teal-500/30 px-2 py-0.5 rounded-sm bg-teal-950/40">DISCOVER YOUR</span>
-                    <h3 class="font-serif text-lg font-bold text-white leading-snug">SIGNATURE SCENT</h3>
-                    <p class="text-xs text-gray-400 font-light">Take our fragrance quiz and find your perfect match in 2 mins.</p>
-                </div>
-                <div class="relative z-10 pt-4">
-                    <button onclick="startQuiz()" class="gold-button px-4 py-2 text-xs uppercase tracking-wider rounded-sm">TAKE QUIZ</button>
-                </div>
-            </div>
+let sp='';const cols=['#D4AF37','#2dd4bf','#f43f5e'];
+for(let i=0;i<18;i++){const s=2+Math.random()*3;sp+=`<span class="spark" style="left:${Math.random()*100}%;top:${Math.random()*100}%;width:${s}px;height:${s}px;background:${cols[i%3]};animation-delay:${Math.random()*3}s"></span>`}
+document.getElementById('sparks').innerHTML=sp;
 
-            <!-- Banner 3: Gift Sets -->
-            <div class="relative glass-card rounded-xl p-6 overflow-hidden border border-amber-500/30 flex flex-col justify-between min-h-[220px]">
-                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-amber-600/20 rounded-full blur-2xl"></div>
-                <div class="relative z-10 space-y-2">
-                    <span class="text-gold font-semibold text-[10px] tracking-widest uppercase border border-gold/30 px-2 py-0.5 rounded-sm bg-amber-950/40">GIFT SETS</span>
-                    <h3 class="font-serif text-lg font-bold text-white leading-snug">PERFECT FOR EVERY OCCASION</h3>
-                    <p class="text-xs text-gray-400 font-light">Elegantly packaged box sets for weddings & celebrations.</p>
-                </div>
-                <div class="relative z-10 pt-4">
-                    <button onclick="openModal('Gift Sets Collection', 'Showing custom hamper options & royal gift boxes.')" class="gold-outline-btn px-4 py-2 text-xs uppercase tracking-wider rounded-sm">SHOP GIFT SETS</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TOP SELLING PRODUCTS SECTION -->
-    <section id="top-sellers" class="py-14 px-4 max-w-7xl mx-auto w-full">
-        <div class="text-center mb-8">
-            <div class="filigree-line mb-2">
-                <span class="text-gold text-xs font-serif uppercase tracking-[0.3em]">Curated Selection</span>
-            </div>
-            <h2 class="font-serif text-2xl md:text-3xl font-bold text-white tracking-widest uppercase">TOP SELLING PRODUCTS</h2>
-        </div>
-
-        <!-- Filter Tabs -->
-        <div class="flex flex-wrap justify-between items-center border-b border-gold/20 pb-3 mb-8 gap-4">
-            <div class="flex space-x-4 text-xs font-bold uppercase tracking-wider">
-                <button class="text-gold border-b-2 border-gold pb-1.5">BEST SELLER</button>
-                <button class="text-gray-400 hover:text-gold pb-1.5 transition">NEW ARRIVALS</button>
-                <button class="text-gray-400 hover:text-gold pb-1.5 transition">LIMITED EDITION</button>
-            </div>
-            <a href="#" class="text-gold hover:text-white text-xs font-bold uppercase tracking-wider flex items-center gap-1">
-                VIEW ALL <i class="fa-solid fa-arrow-right text-[10px]"></i>
-            </a>
-        </div>
-
-        <!-- Product Cards Showcase (5 Items) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-            <!-- Card 1: Oud Al Haya -->
-            <div class="glass-card rounded-lg p-4 border border-gold/30 flex flex-col justify-between group relative">
-                <span class="absolute top-3 left-3 bg-gold/90 text-black text-[9px] font-bold px-2 py-0.5 rounded uppercase">BEST SELLER</span>
-                <button onclick="toggleWishlist(this)" class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-sm"><i class="fa-regular fa-heart"></i></button>
-                <div class="my-4 h-44 flex items-center justify-center bg-black/40 rounded-md p-2 group-hover:scale-105 transition duration-300">
-                    <i class="fa-solid fa-bottle-droplet text-6xl text-gold filter drop-shadow-[0_0_15px_rgba(212,175,55,0.4)]"></i>
-                </div>
-                <div>
-                    <h3 class="font-serif font-bold text-sm text-white group-hover:text-gold transition">OUD AL HAYA</h3>
-                    <p class="text-[11px] text-gray-400 mb-1">Extrait De Parfum</p>
-                    <div class="flex items-center text-amber-400 text-[10px] space-x-1 mb-2">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="text-gray-400 text-[10px] ml-1">(120)</span>
-                    </div>
-                    <p class="font-bold text-gold text-sm mb-3">₹1,299 – ₹4,999</p>
-                    <button onclick="addToCart('OUD AL HAYA', 1299)" class="w-full gold-button py-2 text-xs uppercase tracking-wider rounded-sm">ADD TO CART</button>
-                </div>
-            </div>
-
-            <!-- Card 2: Musk Al Tahara -->
-            <div class="glass-card rounded-lg p-4 border border-gold/30 flex flex-col justify-between group relative">
-                <span class="absolute top-3 left-3 bg-cyan-500/90 text-black text-[9px] font-bold px-2 py-0.5 rounded uppercase">NEW</span>
-                <button onclick="toggleWishlist(this)" class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-sm"><i class="fa-regular fa-heart"></i></button>
-                <div class="my-4 h-44 flex items-center justify-center bg-black/40 rounded-md p-2 group-hover:scale-105 transition duration-300">
-                    <i class="fa-solid fa-bottle-water text-6xl text-gray-100 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]"></i>
-                </div>
-                <div>
-                    <h3 class="font-serif font-bold text-sm text-white group-hover:text-gold transition">MUSK AL TAHARA</h3>
-                    <p class="text-[11px] text-gray-400 mb-1">Extrait De Parfum</p>
-                    <div class="flex items-center text-amber-400 text-[10px] space-x-1 mb-2">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="text-gray-400 text-[10px] ml-1">(98)</span>
-                    </div>
-                    <p class="font-bold text-gold text-sm mb-3">₹999 – ₹3,999</p>
-                    <button onclick="addToCart('MUSK AL TAHARA', 999)" class="w-full gold-button py-2 text-xs uppercase tracking-wider rounded-sm">ADD TO CART</button>
-                </div>
-            </div>
-
-            <!-- Card 3: Rose Al Haya -->
-            <div class="glass-card rounded-lg p-4 border border-gold/30 flex flex-col justify-between group relative">
-                <span class="absolute top-3 left-3 bg-red-600/90 text-white text-[9px] font-bold px-2 py-0.5 rounded uppercase">LIMITED</span>
-                <button onclick="toggleWishlist(this)" class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-sm"><i class="fa-regular fa-heart"></i></button>
-                <div class="my-4 h-44 flex items-center justify-center bg-black/40 rounded-md p-2 group-hover:scale-105 transition duration-300">
-                    <i class="fa-solid fa-whiskey-glass text-6xl text-rose-500 filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"></i>
-                </div>
-                <div>
-                    <h3 class="font-serif font-bold text-sm text-white group-hover:text-gold transition">ROSE AL HAYA</h3>
-                    <p class="text-[11px] text-gray-400 mb-1">Extrait De Parfum</p>
-                    <div class="flex items-center text-amber-400 text-[10px] space-x-1 mb-2">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="text-gray-400 text-[10px] ml-1">(76)</span>
-                    </div>
-                    <p class="font-bold text-gold text-sm mb-3">₹1,199 – ₹4,299</p>
-                    <button onclick="addToCart('ROSE AL HAYA', 1199)" class="w-full gold-button py-2 text-xs uppercase tracking-wider rounded-sm">ADD TO CART</button>
-                </div>
-            </div>
-
-            <!-- Card 4: Amber Oud -->
-            <div class="glass-card rounded-lg p-4 border border-gold/30 flex flex-col justify-between group relative">
-                <span class="absolute top-3 left-3 bg-gold/90 text-black text-[9px] font-bold px-2 py-0.5 rounded uppercase">BEST SELLER</span>
-                <button onclick="toggleWishlist(this)" class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-sm"><i class="fa-regular fa-heart"></i></button>
-                <div class="my-4 h-44 flex items-center justify-center bg-black/40 rounded-md p-2 group-hover:scale-105 transition duration-300">
-                    <i class="fa-solid fa-[#C49726] fa-vial-circle-check text-6xl text-amber-500 filter drop-shadow-[0_0_15px_rgba(245,158,11,0.4)]"></i>
-                </div>
-                <div>
-                    <h3 class="font-serif font-bold text-sm text-white group-hover:text-gold transition">AMBER OUD</h3>
-                    <p class="text-[11px] text-gray-400 mb-1">Extrait De Parfum</p>
-                    <div class="flex items-center text-amber-400 text-[10px] space-x-1 mb-2">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="text-gray-400 text-[10px] ml-1">(110)</span>
-                    </div>
-                    <p class="font-bold text-gold text-sm mb-3">₹1,499 – ₹5,499</p>
-                    <button onclick="addToCart('AMBER OUD', 1499)" class="w-full gold-button py-2 text-xs uppercase tracking-wider rounded-sm">ADD TO CART</button>
-                </div>
-            </div>
-
-            <!-- Card 5: Sandal Musk -->
-            <div class="glass-card rounded-lg p-4 border border-gold/30 flex flex-col justify-between group relative">
-                <span class="absolute top-3 left-3 bg-cyan-500/90 text-black text-[9px] font-bold px-2 py-0.5 rounded uppercase">NEW</span>
-                <button onclick="toggleWishlist(this)" class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-sm"><i class="fa-regular fa-heart"></i></button>
-                <div class="my-4 h-44 flex items-center justify-center bg-black/40 rounded-md p-2 group-hover:scale-105 transition duration-300">
-                    <i class="fa-solid fa-wine-bottle text-6xl text-orange-400 filter drop-shadow-[0_0_15px_rgba(251,146,60,0.4)]"></i>
-                </div>
-                <div>
-                    <h3 class="font-serif font-bold text-sm text-white group-hover:text-gold transition">SANDAL MUSK</h3>
-                    <p class="text-[11px] text-gray-400 mb-1">Extrait De Parfum</p>
-                    <div class="flex items-center text-amber-400 text-[10px] space-x-1 mb-2">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="text-gray-400 text-[10px] ml-1">(67)</span>
-                    </div>
-                    <p class="font-bold text-gold text-sm mb-3">₹999 – ₹3,499</p>
-                    <button onclick="addToCart('SANDAL MUSK', 999)" class="w-full gold-button py-2 text-xs uppercase tracking-wider rounded-sm">ADD TO CART</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOLLOW US ON INSTAGRAM SECTION -->
-    <section class="py-12 bg-[#08060B] border-t border-gold/10">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-8">
-                <div class="filigree-line mb-2">
-                    <span class="text-gold text-xs font-serif uppercase tracking-[0.3em]">Social Gallery</span>
-                </div>
-                <h2 class="font-serif text-2xl font-bold text-white tracking-widest uppercase">FOLLOW US ON INSTAGRAM</h2>
-            </div>
-
-            <!-- 8 Item Grid (7 Photos + 1 Social Handle Box) -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
-                <script>
-                    for(let i=1; i<=7; i++) {
-                        document.write(`
-                            <div class="relative h-32 rounded-lg bg-gradient-to-tr from-amber-950 via-purple-950 to-black border border-gold/20 flex items-center justify-center overflow-hidden group cursor-pointer">
-                                <i class="fa-solid fa-spray-can text-3xl text-gold/40 group-hover:scale-125 transition duration-300"></i>
-                                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition">
-                                    <i class="fa-brands fa-instagram text-gold text-2xl"></i>
-                                </div>
-                            </div>
-                        `);
-                    }
-                </script>
-                <!-- Instagram Handle Block -->
-                <div class="h-32 rounded-lg glass-card border border-gold/40 p-3 text-center flex flex-col items-center justify-center space-y-2">
-                    <i class="fa-brands fa-instagram text-2xl text-gold"></i>
-                    <p class="text-[10px] font-bold text-gray-200">@alhaya.perfumes</p>
-                    <a href="https://instagram.com" target="_blank" class="gold-button px-3 py-1 text-[9px] uppercase tracking-wider rounded-sm">FOLLOW US</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEWSLETTER & GUARANTEE STRIP -->
-    <section class="py-8 bg-[#0D0A14] border-t border-b border-gold/20 px-4">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-            <!-- Newsletter Left -->
-            <div class="lg:col-span-6 flex flex-col sm:flex-row items-center gap-4">
-                <div class="w-12 h-12 rounded-full border border-gold/40 bg-gold/10 flex items-center justify-center shrink-0">
-                    <i class="fa-regular fa-envelope text-gold text-xl"></i>
-                </div>
-                <div>
-                    <h4 class="font-serif font-bold text-white text-sm">JOIN OUR FRAGRANCE FAMILY</h4>
-                    <p class="text-xs text-gray-400">Subscribe and get exclusive offers, new arrivals and special discounts.</p>
-                </div>
-                <div class="flex w-full sm:w-auto mt-2 sm:mt-0">
-                    <input type="email" id="newsletter-email" placeholder="Enter your email address" class="bg-[#181224] border border-gold/30 rounded-l-md px-3 py-2 text-xs text-white focus:outline-none focus:border-gold w-full sm:w-48">
-                    <button onclick="subscribeNewsletter()" class="gold-button px-4 py-2 text-xs font-bold uppercase rounded-r-md shrink-0">SUBSCRIBE</button>
-                </div>
-            </div>
-
-            <!-- Guarantees Right -->
-            <div class="lg:col-span-6 grid grid-cols-3 gap-2 text-center text-xs border-t lg:border-t-0 lg:border-l border-gold/10 pt-4 lg:pt-0 lg:pl-6">
-                <div class="flex flex-col items-center space-y-1">
-                    <i class="fa-solid fa-truck text-gold text-base"></i>
-                    <p class="font-bold text-gray-200 text-[11px]">FREE SHIPPING</p>
-                    <p class="text-[10px] text-gray-400">On orders above ₹999</p>
-                </div>
-                <div class="flex flex-col items-center space-y-1">
-                    <i class="fa-solid fa-rotate text-gold text-base"></i>
-                    <p class="font-bold text-gray-200 text-[11px]">EASY RETURNS</p>
-                    <p class="text-[10px] text-gray-400">Within 7 Days</p>
-                </div>
-                <div class="flex flex-col items-center space-y-1">
-                    <i class="fa-solid fa-shield text-gold text-base"></i>
-                    <p class="font-bold text-gray-200 text-[11px]">SECURE PAYMENTS</p>
-                    <p class="text-[10px] text-gray-400">100% Protected</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MAIN FOOTER -->
-    <footer id="footer" class="bg-[#050408] pt-12 pb-6 px-4 text-xs text-gray-400 border-t border-gold/10">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 pb-10 border-b border-gray-800">
-            <!-- Brand Column -->
-            <div class="lg:col-span-2 space-y-4">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center bg-gold/10">
-                        <i class="fa-solid fa-crown text-gold"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-serif text-lg font-bold text-gold tracking-widest">AL HAYA</h3>
-                        <p class="text-[8px] tracking-[0.2em] text-gray-400 uppercase">Attar and Perfumes</p>
-                    </div>
-                </div>
-                <p class="text-xs leading-relaxed text-gray-400">
-                    Luxury fragrances inspired by tradition. Crafted with passion, delivered with love. Experience pure oriental elegance with our artisanal ouds, rose extracts, and royal attars.
-                </p>
-            </div>
-
-            <!-- Quick Links -->
-            <div class="space-y-3">
-                <h4 class="font-serif text-gold font-bold uppercase tracking-wider text-xs">QUICK LINKS</h4>
-                <ul class="space-y-2 text-gray-400">
-                    <li><a href="#" class="hover:text-gold transition">About Us</a></li>
-                    <li><a href="#" class="hover:text-gold transition">Contact Us</a></li>
-                    <li><a href="#" class="hover:text-gold transition">Track Order</a></li>
-                    <li><a href="#" class="hover:text-gold transition">FAQ</a></li>
-                    <li><a href="#" class="hover:text-gold transition">Perfume Guide</a></li>
-                </ul>
-            </div>
-
-            <!-- Customer Service -->
-            <div class="space-y-3">
-                <h4 class="font-serif text-gold font-bold uppercase tracking-wider text-xs">CUSTOMER SERVICE</h4>
-                <ul class="space-y-2 text-gray-400">
-                    <li><a href="#" class="hover:text-gold transition">Shipping Policy</a></li>
-                    <li><a href="#" class="hover:text-gold transition">Return & Refund Policy</a></li>
-                    <li><a href="#" class="hover:text-gold transition">Terms & Conditions</a></li>
-                    <li><a href="#" class="hover:text-gold transition">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-gold transition">Cancellation Policy</a></li>
-                </ul>
-            </div>
-
-            <!-- My Account -->
-            <div class="space-y-3">
-                <h4 class="font-serif text-gold font-bold uppercase tracking-wider text-xs">MY ACCOUNT</h4>
-                <ul class="space-y-2 text-gray-400">
-                    <li><a href="#" class="hover:text-gold transition">My Account</a></li>
-                    <li><a href="#" class="hover:text-gold transition">Orders</a></li>
-                    <li><a href="#" class="hover:text-gold transition">Wishlist</a></li>
-                    <li><a href="#" class="hover:text-gold transition">Addresses</a></li>
-                    <li><a href="#" class="hover:text-gold transition">Payment Methods</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact Us -->
-            <div class="space-y-3">
-                <h4 class="font-serif text-gold font-bold uppercase tracking-wider text-xs">CONTACT US</h4>
-                <ul class="space-y-2.5 text-gray-400">
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-gold text-xs"></i> +91 98745 43210</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-gold text-xs"></i> info@alhayaattar.com</li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-gold text-xs mt-0.5"></i> Mumbai & Dubai Flagship Boutiques</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Payment Icons & Copyright Bottom -->
-        <div class="max-w-7xl mx-auto pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="text-[11px] text-gray-500">© 2026 AL HAYA ATTAR AND PERFUMES. ALL RIGHTS RESERVED.</p>
-            <div class="flex items-center space-x-3 text-lg text-gray-300">
-                <i class="fa-brands fa-cc-visa hover:text-gold transition"></i>
-                <i class="fa-brands fa-cc-mastercard hover:text-gold transition"></i>
-                <i class="fa-solid fa-credit-card hover:text-gold transition" title="RuPay / UPI"></i>
-                <i class="fa-brands fa-google-pay hover:text-gold transition"></i>
-                <i class="fa-brands fa-apple-pay hover:text-gold transition"></i>
-            </div>
-        </div>
-    </footer>
-
-    <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/919874543210" target="_blank" class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300" title="Chat on WhatsApp">
-        <i class="fa-brands fa-whatsapp text-2xl"></i>
-    </a>
-
-    <!-- CART SLIDE-OVER DRAWER -->
-    <div id="cart-drawer" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0">
-        <div id="cart-backdrop" onclick="toggleCartDrawer()" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
-        <div id="cart-panel" class="absolute top-0 right-0 h-full w-full max-w-md bg-[#0D0A14] border-l border-gold/30 p-6 flex flex-col justify-between transform translate-x-full transition duration-300 pointer-events-auto">
-            <div>
-                <div class="flex justify-between items-center border-b border-gold/20 pb-4">
-                    <h3 class="font-serif font-bold text-lg text-gold flex items-center gap-2"><i class="fa-solid fa-bag-shopping"></i> YOUR SHOPPING BAG</h3>
-                    <button onclick="toggleCartDrawer()" class="text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
-                </div>
-                <div id="cart-items" class="py-4 space-y-4 max-h-[60vh] overflow-y-auto">
-                    <!-- Dynamic Cart Items Injected Here -->
-                </div>
-            </div>
-            <div class="border-t border-gold/20 pt-4 space-y-3">
-                <div class="flex justify-between text-sm font-bold">
-                    <span class="text-gray-300">Subtotal:</span>
-                    <span id="cart-subtotal" class="text-gold">₹2,499</span>
-                </div>
-                <p class="text-[10px] text-gray-500">Taxes and shipping calculated at checkout.</p>
-                <button onclick="checkout()" class="w-full gold-button py-3 text-xs uppercase tracking-widest rounded-sm font-bold">PROCEED TO CHECKOUT</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- GENERAL PURPOSE MODAL -->
-    <div id="app-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-        <div class="glass-card rounded-xl max-w-md w-full p-6 border border-gold/40 relative">
-            <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
-            <h3 id="modal-title" class="font-serif font-bold text-gold text-lg mb-2">Notice</h3>
-            <p id="modal-body" class="text-xs text-gray-300 mb-4">Modal content goes here...</p>
-            <button onclick="closeModal()" class="w-full gold-button py-2 text-xs uppercase font-bold rounded-sm">Close</button>
-        </div>
-    </div>
-
-    <script>
-        /* Cart State */
-        let cart = [
-            { name: 'OUD AL HAYA', price: 1299, qty: 1 },
-            { name: 'ROSE AL HAYA', price: 1200, qty: 1 }
-        ];
-
-        /* Render Cart State */
-        function renderCart() {
-            const container = document.getElementById('cart-items');
-            const totalHeader = document.getElementById('cart-total-header');
-            const subtotalElem = document.getElementById('cart-subtotal');
-            const countBadge = document.getElementById('cart-count');
-
-            if (cart.length === 0) {
-                container.innerHTML = `<p class="text-xs text-gray-400 text-center py-8">Your cart is currently empty.</p>`;
-                totalHeader.innerText = '₹0';
-                subtotalElem.innerText = '₹0';
-                countBadge.innerText = '0';
-                return;
-            }
-
-            let total = 0;
-            let itemsCount = 0;
-            let html = '';
-
-            cart.forEach((item, idx) => {
-                const itemTotal = item.price * item.qty;
-                total += itemTotal;
-                itemsCount += item.qty;
-
-                html += `
-                    <div class="flex items-center justify-between bg-black/40 p-3 rounded-md border border-gold/10">
-                        <div>
-                            <h4 class="font-serif text-xs font-bold text-white">${item.name}</h4>
-                            <p class="text-[10px] text-gray-400">₹${item.price.toLocaleString()} x ${item.qty}</p>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <span class="text-xs font-bold text-gold">₹${itemTotal.toLocaleString()}</span>
-                            <button onclick="removeItem(${idx})" class="text-red-400 hover:text-red-300 text-xs"><i class="fa-solid fa-trash"></i></button>
-                        </div>
-                    </div>
-                `;
-            });
-
-            container.innerHTML = html;
-            totalHeader.innerText = `₹${total.toLocaleString()}`;
-            subtotalElem.innerText = `₹${total.toLocaleString()}`;
-            countBadge.innerText = itemsCount;
-        }
-
-        /* Add to Cart Functionality */
-        function addToCart(name, price) {
-            const existing = cart.find(i => i.name === name);
-            if(existing) {
-                existing.qty += 1;
-            } else {
-                cart.push({ name, price, qty: 1 });
-            }
-            renderCart();
-            toggleCartDrawer();
-        }
-
-        function removeItem(idx) {
-            cart.splice(idx, 1);
-            renderCart();
-        }
-
-        /* Cart Drawer Toggle */
-        function toggleCartDrawer() {
-            const drawer = document.getElementById('cart-drawer');
-            const panel = document.getElementById('cart-panel');
-            
-            if(drawer.classList.contains('pointer-events-none')) {
-                drawer.classList.remove('pointer-events-none', 'opacity-0');
-                drawer.classList.add('pointer-events-auto', 'opacity-100');
-                panel.classList.remove('translate-x-full');
-            } else {
-                drawer.classList.add('pointer-events-none', 'opacity-0');
-                drawer.classList.remove('pointer-events-auto', 'opacity-100');
-                panel.classList.add('translate-x-full');
-            }
-        }
-
-        /* Generic Modal Handler */
-        function openModal(title, body) {
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-body').innerText = body;
-            const modal = document.getElementById('app-modal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('app-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-
-        /* Wishlist Counter */
-        let wishlistCount = 3;
-        function toggleWishlist(btn) {
-            const icon = btn.querySelector('i');
-            if (icon.classList.contains('fa-regular')) {
-                icon.classList.remove('fa-regular');
-                icon.classList.add('fa-solid', 'text-red-500');
-                wishlistCount++;
-            } else {
-                icon.classList.remove('fa-solid', 'text-red-500');
-                icon.classList.add('fa-regular');
-                wishlistCount--;
-            }
-            document.getElementById('wishlist-count').innerText = wishlistCount;
-        }
-
-        function openWishlist() {
-            openModal('My Wishlist', `You currently have ${wishlistCount} luxury fragrances saved in your wishlist.`);
-        }
-
-        /* Voice Search Demo */
-        function triggerVoiceSearch() {
-            openModal('Voice Search', 'Listening for fragrance names (e.g., "Oud", "Musk", "Rose")...');
-        }
-
-        /* Newsletter Subscription */
-        function subscribeNewsletter() {
-            const email = document.getElementById('newsletter-email').value;
-            if(email && email.includes('@')) {
-                openModal('Welcome to AL HAYA Family', `Thank you for subscribing (${email})! Check your inbox for a 10% welcome coupon.`);
-                document.getElementById('newsletter-email').value = '';
-            } else {
-                openModal('Invalid Email', 'Please enter a valid email address to subscribe.');
-            }
-        }
-
-        /* Signature Scent Quiz */
-        function startQuiz() {
-            openModal('Fragrance Quiz', 'Question 1: What is your preferred scent profile?\n\n1. Warm & Woody Oud\n2. Delicate Floral & Rose\n3. Fresh & Aqua\n\n(Select in store boutique or contact support for live AI consultation)');
-        }
-
-        /* Checkout Action */
-        function checkout() {
-            if(cart.length === 0) {
-                openModal('Cart Empty', 'Please add items to your cart before proceeding.');
-                return;
-            }
-            openModal('Order Checkout', 'Redirecting to secure gateway... Cash on Delivery & UPI available for Indian orders.');
-        }
-
-        /* Initialize Page Render */
-        window.onload = function() {
-            renderCart();
-        }
-    </script>
+let cart=[{name:'OUD AL HAYA',price:1299,qty:1},{name:'ROSE AL HAYA',price:1200,qty:1}];
+function renderCart(){
+const c=document.getElementById('cart-items'),th=document.getElementById('cart-total-header'),sub=document.getElementById('cart-subtotal'),cb=document.getElementById('cart-count');
+if(cart.length===0){c.innerHTML='<p class="text-xs text-gray-400 text-center py-8">Your cart is currently empty.</p>';th.innerText='₹0';sub.innerText='₹0';cb.innerText='0';return}
+let total=0,qty=0,html='';
+cart.forEach((it,idx)=>{const t=it.price*it.qty;total+=t;qty+=it.qty;
+html+=`<div class="flex items-center justify-between bg-black/40 p-3 rounded-md border border-gold/10"><div><h4 class="font-serif text-xs font-bold text-white">${it.name}</h4><p class="text-[10px] text-gray-400">₹${it.price.toLocaleString()} x ${it.qty}</p></div><div class="flex items-center gap-3"><span class="text-xs font-bold text-gold">₹${t.toLocaleString()}</span><button onclick="removeItem(${idx})" class="text-red-400 hover:text-red-300 text-xs"><i class="fa-solid fa-trash"></i></button></div></div>`});
+c.innerHTML=html;th.innerText='₹'+total.toLocaleString();sub.innerText='₹'+total.toLocaleString();cb.innerText=qty;
+}
+function addToCart(name,price){const ex=cart.find(i=>i.name===name);if(ex){ex.qty+=1}else{cart.push({name,price,qty:1})}renderCart();toggleCartDrawer()}
+function removeItem(i){cart.splice(i,1);renderCart()}
+function toggleCartDrawer(){const d=document.getElementById('cart-drawer'),p=document.getElementById('cart-panel');
+if(d.classList.contains('pointer-events-none')){d.classList.remove('pointer-events-none','opacity-0');d.classList.add('pointer-events-auto','opacity-100');p.classList.remove('translate-x-full')}
+else{d.classList.add('pointer-events-none','opacity-0');d.classList.remove('pointer-events-auto','opacity-100');p.classList.add('translate-x-full')}}
+function openModal(title,body){document.getElementById('modal-title').innerText=title;document.getElementById('modal-body').innerText=body;const m=document.getElementById('app-modal');m.classList.remove('hidden');m.classList.add('flex')}
+function closeModal(){const m=document.getElementById('app-modal');m.classList.add('hidden');m.classList.remove('flex')}
+let wishlistCount=3;
+function toggleWishlist(btn){const icon=btn.querySelector('i');if(icon.classList.contains('fa-regular')){icon.classList.remove('fa-regular');icon.classList.add('fa-solid','text-red-500');wishlistCount++}else{icon.classList.remove('fa-solid','text-red-500');icon.classList.add('fa-regular');wishlistCount--}document.getElementById('wishlist-count').innerText=wishlistCount}
+function openWishlist(){openModal('My Wishlist',`You currently have ${wishlistCount} luxury fragrances saved in your wishlist.`)}
+function triggerVoiceSearch(){openModal('Voice Search','Listening for fragrance names (e.g., "Oud", "Musk", "Rose")…')}
+function subscribeNewsletter(){const e=document.getElementById('newsletter-email').value;if(e&&e.includes('@')){openModal('Welcome to AL HAYA Family',`Thank you for subscribing (${e})! Check your inbox for a 10% welcome coupon.`);document.getElementById('newsletter-email').value=''}else{openModal('Invalid Email','Please enter a valid email address to subscribe.')}}
+function startQuiz(){openModal('Fragrance Quiz','Question 1: What is your preferred scent profile?\\n\\n1. Warm & Woody Oud\\n2. Delicate Floral & Rose\\n3. Fresh & Aqua\\n\\nContact support for a live consultation.')}
+function checkout(){if(cart.length===0){openModal('Cart Empty','Please add items to your cart before proceeding.');return}openModal('Order Checkout','Redirecting to secure gateway… Cash on Delivery & UPI available for Indian orders.')}
+window.onload=renderCart;
+</script>
 </body>
 </html>
